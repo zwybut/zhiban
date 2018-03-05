@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_historyMessage.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type='text/javascript' src="../../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_historyMessage.js"></script>
+</head>
+<body>
+<div class="title">
+    <p></p>
+    <span>历史短信查询</span>
+</div>
+<div class="timeSet">
+    <div class="ts1">发送时间</div>
+    <div class="ts2">
+        <input type="text" placeholder="" id="startTime" class=" fl easyui-datetimebox"
+               data-options="required:true,showSeconds:false,editable:false" value="">
+    </div>
+    <div class="ts3">-</div>
+    <div class="ts4">
+        <input type="text" placeholder="" id="endTime" class=" fl easyui-datetimebox"
+               data-options="required:true,showSeconds:false,editable:false" value="">
+    </div>
+    <div class="ts5">
+        <input type="text" placeholder="请输入接收人或电话" id="searchIpt">
+        <div id="searchBtn"></div>
+    </div>
+</div>
+<ul class="listTitle">
+    <li>发送时间</li>
+    <li>发送人</li>
+    <li>接收人</li>
+    <li>电话</li>
+    <li>发送状态</li>
+    <li>发送类型</li>
+    <li>消息内容</li>
+</ul>
+<div class="wrap">
+    <ul class="listContent">
+        <!--<li>-->
+        <!--<div>2016-10-18 08:00</div>-->
+        <!--<div>某某部门</div>-->
+        <!--<div>张三</div>-->
+        <!--<div>13856781234</div>-->
+        <!--<div class="news" onmouseover="this.className='newsAll'" onmouseout="this.className='news'">某某地区最近将迎来多少级大风并伴随雷雨，请各单位注意相关安全措施！！！！！！！！！！！！！！</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+</body>
+</html>

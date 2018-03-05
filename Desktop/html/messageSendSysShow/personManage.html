@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_personManage.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_personManage.js"></script>
+</head>
+<body>
+<div class="title">
+    <p></p>
+    <span>通讯录管理</span>
+</div>
+<div class="operDiv">
+    <div class="regionSelectDiv">
+        <select id="regionSelect">
+            <option value="" selected="selected">地区选择</option>
+            <option value="嵊州市">嵊州市</option>
+        </select>
+    </div>
+    <!--<div class="regionSelectDiv1">-->
+        <!--<select id="regionSelect1">-->
+            <!--<option value="" selected="selected">单位选择</option>-->
+            <!--<option value="嵊州市">嵊州市</option>-->
+        <!--</select>-->
+    <!--</div>-->
+    <!--<div class="enterPositionDiv">-->
+        <!--<input type="text" placeholder="请输入电话号码" id="enterPosition">-->
+    <!--</div>-->
+    <div class="searchDiv">
+        <input type="text" placeholder="模糊搜索" id="searchIpt">
+        <div id="searchBtn"></div>
+    </div>
+    <div id="importUserBtn" class="ui-button">添加新用户</div>
+    <div id="batchRemoveBtn" class="ui-button-gray">批量移除</div>
+</div>
+<ul class="listTitle">
+    <li><input type="checkbox" class="regular-checkbox" id="checkAll"><label for="checkAll"></label></li>
+    <li>所在地区</li>
+    <li>单位</li>
+    <li>姓名</li>
+    <li>电话</li>
+    <li>部门</li>
+    <li>职位</li>
+    <li>操作</li>
+</ul>
+<div class="wrap">
+    <ul class="listContent">
+        <!--<li>-->
+        <!--<div><input type="checkbox" class="regular-checkbox checkPart" id="checkbox-1"><label for="checkbox-1"></label></div>-->
+        <!--<div class="zone">三门县</div>-->
+        <!--<div class="userId">张三</div>-->
+        <!--<div class="mobileNum">13856781234</div>-->
+        <!--<div class="positionName">局长</div>-->
+        <!--<div>-->
+        <!--<div class="operBox">-->
+        <!--<div class="editBtn"></div>-->
+        <!--<div class="delBtn"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+<!--黑色蒙版-->
+<div class="modelbg"></div>
+<!--添加新用户弹框-->
+<div id="newUserPopup">
+    <iframe src="personManage_addNewUser.html" width="650px" height="460px" frameborder="0"></iframe>
+    <div id="closeBtn"></div>
+</div>
+<!--单独修改用户弹框-->
+<div id="singleRewritePopup">
+    <iframe src="personManage_singleRewrite.html" width="650px" height="460px" frameborder="0" id="singleRewriteHtml"></iframe>
+    <div id="closeUpBtn"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_templateMessage.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_templateMessage.js"></script>
+</head>
+<body>
+<div class="title">
+    <p></p>
+    <span>固定模板定制</span>
+</div>
+<div class="operDiv">
+    <div id="importUserBtn" class="ui-button">添加新模板</div>
+    <div id="batchRemoveBtn" class="ui-button-gray">批量删除</div>
+    <div class="searchDiv">
+        <input type="text" placeholder="请输入模板名称" id="searchIpt">
+        <div id="searchBtn"></div>
+    </div>
+</div>
+<ul class="listTitle">
+    <li><input type="checkbox" class="regular-checkbox" id="checkAll"><label for="checkAll"></label></li>
+    <li>模板名称</li>
+    <li>模板内容</li>
+    <li>操作</li>
+</ul>
+<div class="wrap">
+    <ul class="listContent">
+        <!--<li>-->
+        <!--<div><input type="checkbox" class="regular-checkbox checkPart" id="checkbox-1"><label for="checkbox-1"></label></div>-->
+        <!--<div class="modelName">水文信息</div>-->
+        <!--<div class="modelContent">某某地区最近将迎来多少级大风并伴随雷雨，请各单位注意相关安全措施1！！！！！！</div>-->
+        <!--<div>-->
+        <!--<div class="operBox">-->
+        <!--<div class="editBtn"></div>-->
+        <!--<div class="delBtn"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+<!--黑色蒙版-->
+<div class="modelbg"></div>
+
+<!--添加新模板弹框-->
+<div id="newTemplatePopup">
+    <iframe src="messageSend_addNewTemplate.html" width="650px" height="400px" frameborder="0"></iframe>
+    <div id="shutBtn"></div>
+</div>
+</body>
+</html>

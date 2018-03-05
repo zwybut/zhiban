@@ -1,0 +1,510 @@
+.userManageTitle{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:51px;
+    background-color: #ffffff;
+}
+.userManageTitle span{
+    line-height: 51px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+.userList{
+    position: absolute;
+    top:72px;
+    left:20px;
+    bottom: 20px;
+    width:278px;
+    border:1px solid #dee5e7;
+    background-color: #ffffff;
+}
+.userListTitle{
+    height:39px;
+    border-bottom:1px solid #dee5e7;
+    background-color: #fafafa;
+}
+.ult1{
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.userListContent{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.userListContent li{
+    height:60px;
+    border-bottom: 1px solid #dee5e7;
+    cursor: pointer;
+}
+.userListContent li:hover,.userListContent li.active{
+    background-color: #3bb9d4;
+    color: #fff;
+}
+.listIcon{
+    float: left;
+    width:18px;
+    height:18px;
+    margin-top: 21px;
+    margin-left: 18px;
+}
+.listIcon_a{
+    background: url("../images/audio.png") no-repeat right 0;
+}
+.userListContent li:hover .listIcon_a,.userListContent li.active .listIcon_a{
+    background: url("../images/audio.png") no-repeat left 0;
+}
+.listIcon_m{
+    background: url("../images/massege.png") no-repeat right 0;
+}
+.userListContent li:hover .listIcon_m,.userListContent li.active .listIcon_m{
+    background: url("../images/massege.png") no-repeat left 0;
+}
+.listTitle{
+    float: left;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 14px;
+    margin-left: 13px;
+}
+/*.listTitle.active{*/
+/*color: #fff;*/
+/*}*/
+.userRightsList,.editPage{
+    display: none;
+    position: absolute;
+    top:72px;
+    left:320px;
+    right:20px;
+    bottom: 20px;
+    border:1px solid #dee5e7;
+    background-color: #fff;
+}
+.userRightsListTitle{
+    border-bottom:1px solid #dee5e7;
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+.userRightsListTitle span{
+    margin-left: 20px;
+}
+#addDynamicBtn{
+    float: right;
+    width:60px;
+    height:24px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 10px;
+    border-color: #3bb9d4;
+    background-color: #3bb9d4;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#addDynamicBtn:hover{
+    background-color: #2a8f9e;
+}
+.userRightsListContent{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.newsTitle{
+    float: left;
+    display: inline-block;
+    line-height: 30px;
+}
+.newsContent{
+    float: left;
+    height:30px;
+    margin-left: 15px;
+    position: relative;
+}
+.newsContent_{
+    float: left;
+    height:30px;
+    margin-left: 15px;
+    position: relative;
+}
+.showContent{
+    height: 153px;
+}
+#tit_id{
+    width: 300px;
+    height:28px;
+    padding:0 15px;
+    border:1px solid #dee5e7;
+    margin-left: 15px;
+}
+#zy_id{
+    border:1px solid #dee5e7;
+    margin-left: 15px;
+    width: 300px;
+    height: 60px;
+    padding:15px;
+}
+.newsContent input{
+    width:603px;
+    height:28px;
+    padding-left: 15px;
+    padding-right: 20px;
+    border:1px solid #dee5e7;
+
+}
+.newsContent_ input{
+    width:300px;
+    height:28px;
+    padding-left: 15px;
+    border:1px solid #dee5e7;
+}
+.newsContent input.active{
+    border:1px solid #3bb9d4;
+}
+#editBtn{
+    position: absolute;
+    top:6px;
+    right:3px;
+    width:16px;
+    height:16px;
+    background: url("../images/edit.png") no-repeat right 0;
+    cursor: pointer;
+}
+#editBtn1{
+    position: absolute;
+    top:6px;
+    right:-7px;
+    width:16px;
+    height:16px;
+    background: url("../images/edit.png") no-repeat right 0;
+    cursor: pointer;
+}
+#editBtn.active,#editBtn1.active{
+    background: url("../images/edit_bule.png") no-repeat 0 0;
+}
+#publishBtn{
+    float: left;
+    width:80px;
+    height:28px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+    border-color: #3bb9d4;
+    background-color: #3bb9d4;
+    text-align: center;
+    line-height: 30px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.busDynamicsList{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.busDynamicsList li{
+    height: 155px;
+    border-bottom: 1px dotted #dee5e7;
+    margin:0 auto;
+}
+.left{
+    float: left;
+    width:290px;
+    height:130px;
+    margin-top: 12px;
+}
+.center{
+    float: left;
+    width:505px;
+    height:155px;
+    margin-left: 33px;
+}
+.centerTitle{
+    height:42px;
+    font-size: 18px;
+    color: #666666;
+    line-height: 42px;
+    font-weight:bold;
+}
+.centerContent{
+    height:75px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #808080;
+}
+.centerTime{
+    height:38px;
+    font-size: 12px;
+    color: #999999;
+    line-height: 38px;
+}
+.right{
+    float: right;
+    width:74px;
+    height:155px;
+}
+.rightEditBtn{
+    height:38px;
+    padding-left: 25px;
+    font-size: 14px;
+    line-height: 38px;
+    color: #999999;
+    margin-top:38px;
+    background: url("../images/edit_bule.png") no-repeat 0 center;
+    cursor: pointer;
+}
+.rightDelBtn{
+    height:38px;
+    padding-left: 25px;
+    font-size: 14px;
+    line-height: 38px;
+    color: #999999;
+    background: url("../images/rub_big.png") no-repeat 0 center;
+    cursor: pointer;
+}
+/*************** 分页按钮 ***********begin*/
+.pageNumb{
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    right:25px;
+}
+#total{
+    height: 60px;
+    padding-right: 20px;
+    line-height: 60px;
+    font-size: 12px;
+    color: #666666;
+}
+.layui-laypage{
+    margin:18px 0;
+    background-color: transparent;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color:#3bb9d4 ;
+}
+.layui-laypage button{
+    background-color:#3bb9d4 ;
+    color: #fff;
+    padding:0 10px;
+}
+.layui-laypage input{
+    width: 40px;
+}
+.layui-laypage button, .layui-laypage input{
+    height: 22px;
+    line-height: 22px;
+}
+.layui-laypage a, .layui-laypage span{
+    height: 22px;
+    line-height: 22px;
+}
+/*************** 分页按钮 ************end*/
+#backBtn span{
+    cursor: pointer;
+}
+#backBtn span:hover{
+    color: #3bb9d4;
+    text-decoration: underline;
+}
+.busCover{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.busCover span{
+    float: left;
+    display: inline-block;
+    line-height: 30px;
+}
+.busCoverContent{
+    float: left;
+    width:380px;
+    height:131px;
+    margin-left: 15px;
+    border:1px solid #dee5e7;
+    position: relative;
+}
+.innerContent{
+    width:400px;
+    height:130px;
+    margin-top:14px;
+    margin-left: 19px;
+    border:1px dotted #dee5e7;
+    position: relative;
+}
+.upLoadBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+    width:128px;
+    height:38px;
+    font-size: 14px;
+    color: #4c4c4c;
+    text-align: center;
+    line-height: 38px;
+    border:1px solid #dee5e7;
+    cursor: pointer;
+}
+.greetContent{
+    margin-top:20px;
+    margin-left: 83px;
+    border:1px solid #eaeff2;
+    overflow-y: auto;
+}
+.greetBottom{
+    height:60px;
+}
+#cancelBtn{
+    float: right;
+    width:78px;
+    height:28px;
+    margin-top: 15px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #697883;
+    background-color: #fff;
+    border:1px solid #d1d6e0;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    cursor: pointer;
+}
+#saveBtn,#confirmBtn{
+    float: right;
+    width:80px;
+    height:30px;
+    margin-top: 15px;
+    margin-right: 43px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3bb9d4;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    cursor: pointer;
+}
+#modifyBtn{
+    display: none;
+}
+#saveBtn:hover,#confirmBtn:hover{
+    background-color: #2a8f9e;
+}
+#saveBtn:active,#confirmBtn:active{
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+/*******************编辑器样式*******************beigin*/
+.gray-theme.froala-box .froala-element.f-basic{
+    border:none;
+}
+.gray-theme.froala-editor{
+    border:none;
+    background-color: #fff;
+    border-bottom:1px solid #eaeff2 !important;
+}
+.greetContent .froala-element{
+    padding: 20px;
+}
+.greetContent .froala-element > p:nth-child(1){
+    display: none;
+}
+.greetContent .froala-element > h1{
+    height:49px;
+    line-height: 49px;
+    font-size: 16px;
+    color: #2c2c31;
+    margin:0 auto;
+    border-bottom: 1px dashed #eaeff2 !important;
+}
+.greetContent .froala-element > p:nth-child(3){
+    height:39px;
+    line-height: 39px;
+    font-size: 12px;
+    color: #999999;
+    border-bottom: 1px dashed #eaeff2 !important;
+}
+.greetContent .froala-element > p:nth-child(4){
+    font-size: 14px;
+    color: #2c2c31;
+}
+/*******************编辑器样式*******************end*/
+
+/*file样式*/
+.a-upload {
+    height: 30px;
+    width: 130px;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin:50px auto;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 30px;
+    /*display: inline-block;*/
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+.ke-container.ke-container-default{
+    margin:0 auto;
+}
+.removeWarnContent{
+    width:495px;
+    height:85px;
+    text-align: center;
+    line-height: 85px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #697883;
+    letter-spacing: 1px;
+    background:  url("../images/dele_win.png") no-repeat 22% center;
+}
+.confirmWin_enterBtn {
+    background: #3bb9d4;
+}

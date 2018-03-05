@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>嵊州市水情专业分析系统</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Plugins/dhtmlxSuite_pro/codebase/dhtmlx.css"/>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/remove.css">
+
+    <script type='text/javascript' src="../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../Plugins/dhtmlxSuite_pro/codebase/dhtmlx.js"></script>
+
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type='text/javascript' src="../js/index.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="log_name clearfix fl">
+            <div class="header_one"><img src="../images/analy_logo.png" alt=""></div>
+            <div class="header_two">嵊州市水情专业分析系统</div>
+        </div>
+        <div class="header_three">
+            <ul class="nav nav-tabs clearfix" >
+                <li onclick="floodAnalyzeShow()" class="active"><a href="#">水情报表生成</a></li>
+                <li onclick="messageSendSysShow()"><a href="#">短信平台</a></li>
+                <li onclick="personDutySysShow()"><a href="#">值班管理</a></li>
+                <!--<li onclick="contourMapDraw()"><a href="#">等值线绘制</a></li>-->
+                <!--<li onclick="contourMapDraw()"><a href="#">等值线绘制</a></li>-->
+                <li onclick="rsvCurveQueryShow()"><a href="#">库容曲线查询</a></li>
+                <!--<li onclick="rsvLevelForecastShow()"><a href="#">水库水位估报</a></li>-->
+                <!--<li onclick="forecastResultsShow()"><a href="#">预报成果查询</a></li>-->
+                <!--<li onclick="backStageManageShow()"><a href="#">后台管理</a></li>-->
+            </ul>
+        </div>
+        <div class="header_four">
+            <div id="userPic"></div>
+            <div id="hst">您好</div>
+            <ul class="loginDiv">
+                <li class="sanjiao"></li>
+                <li class="u_login">重新登录</li>
+                <li class="u_logout"><span>×</span>用户注销</li>
+            </ul>
+        </div>
+    </div>
+    <div id="mainBody">
+
+    </div>
+    <!--站点全部删除遮罩层-->
+    <div class="removeBg"></div>
+    <!--站点全部删除弹出框-->
+    <div class="removeWarn">
+        <div class="removeWarnTitle">
+            <span>删除信息</span>
+            <div><img src="../images/f.png" alt="" class="cancleIcon"></div>
+        </div>
+        <div class="removeWarnContent">您确定要删除<span></span>内所有站点吗？</div>
+        <div class="rws1 ui-button">删除</div>
+        <div class="rws2 ui-button ui-button-gray">取消</div>
+    </div>
+
+</body>
+</html>

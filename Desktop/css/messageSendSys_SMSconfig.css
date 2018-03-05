@@ -1,0 +1,183 @@
+.left{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:240px;
+    border-right: 1px solid #eaeaeb;
+}
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.left .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/MES_send.png") no-repeat left center;
+}
+.right{
+    position: absolute;
+    top:0;
+    left:241px;
+    right:0;
+    bottom: 0;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.right .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/set.png") no-repeat right center;
+}
+.right .title div{
+    font-weight: normal;
+}
+.right .title div b{
+    color: #3bb9d4;
+}
+.right .title div b:first-child{
+    padding-left: 23px;
+    background: url("../images/warn.png") no-repeat 3px center;
+}
+.conditionType{
+    height:70px;
+}
+.selectDiv{
+    width:100px;
+    height:30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.siteTypeTab{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.siteTypeTab li{
+    float: left;
+    width:78px;
+    height:28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    color: #666;
+    border: 1px solid #d1d6e0;
+    border-right-color:transparent;
+    cursor: pointer;
+}
+.siteTypeTab li:last-child{
+    border-right: 1px solid #d1d6e0;
+}
+.siteTypeTab li:hover,.siteTypeTab li.active{
+    color: #3bb9d4;
+    border: 1px solid #3bb9d4;
+    background: url("../images/selected.png") no-repeat right bottom;
+}
+
+
+.searchDiv{
+    width:210px;
+    height:30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#searchIpt{
+    width:158px;
+    height:28px;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #919aa1;
+    line-height:28px;
+    border:1px solid #dee5e7;
+}
+#searchBtn{
+    float: right;
+    width:40px;
+    height:28px;
+    background: #3bb9d4 url("../images/sea_big.png") no-repeat center;
+    cursor: pointer;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+
+.searchSelectDiv{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.tableWrap{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.tableWrap table{
+    width:100%;
+    border-collapse: collapse;
+    border:none;
+}
+.tableWrap table thead tr{
+    background: #fafafa;
+}
+.tableWrap table th,.tableWrap table td{
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color: #666;
+    border-bottom:1px solid #f2f2f2;
+}
+.mCSB_inside > .mCSB_container {
+     margin-right: 0px;
+}
+.fixHeaderTable_mainTableWrap {
+    width:100% !important;
+}
+
+
+
+
+/**************tree***********begin*/
+ul .tree-node-selected .tree-title {
+    background: #3bb9d4;
+    color: #fff;
+}
+.tree-node-hover{
+    color: #3bb9d4;
+}
+/*************tree*************end*/
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    margin-top: 0;
+    margin-right: 0;
+    border: 1px solid #d1d6e0;
+}
+.select_box:hover{
+    border: 1px solid #3bb9d4;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option li.hover{
+   background: #3bb9d4;
+}
+/****************自定义下拉选择框样式****************end*/

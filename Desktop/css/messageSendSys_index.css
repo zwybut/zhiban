@@ -1,0 +1,538 @@
+.header{
+    height: 50px;
+    box-shadow: 0 1px 2px #e6e6e6;
+}
+.header_left{
+    float: left;
+    width:70px;
+    height:50px;
+    background: #3bb9d4 url("../images/MES_logo.png") no-repeat center center;
+}
+.header_right{
+    float: right;
+    width:calc(100% - 70px);
+    height:50px;
+}
+.sysTitle{
+    float: left;
+    width:calc(100%);
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #3bb9d4;
+}
+.loginDiv{
+    float: right;
+    width:135px;
+    height:50px;
+}
+.userName{
+    float: left;
+    height:50px;
+    padding-left: 25px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #666666;
+    background: url("../images/mes_people.png") no-repeat 5% center;
+    cursor: pointer;
+}
+.userName:hover,.loginOut:hover{
+    color: #3bb9d4;
+    text-decoration: underline;
+}
+.loginOut{
+    float: left;
+    height:45px;
+    line-height: 50px;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #666666;
+    cursor: pointer;
+}
+.slideDiv{
+    position:absolute;
+    display: none;
+    top: 50px;
+    right: 0;
+    width: 120px;
+    border:1px solid #dbe0e6;
+    z-index: 11;
+}
+.slideDiv li{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    font-size: 12px;
+    color: #768491;
+    background-color:#ffffff;
+    cursor: pointer;
+}
+.slideDiv li:hover{
+    color: #fff;
+    background-color:#3bb9d4
+}
+.slideDiv .u_login:hover span{
+    background: url("../images/user.png")no-repeat -14px 0 ;
+}
+.slideDiv .u_logout:hover span{
+    background: url("../images/user.png")no-repeat -14px -14px ;
+}
+.u_login span{
+    display: inline-block;
+    float: left;
+    width:14px;
+    height:14px;
+    margin-top: 8px;
+    background: url("../images/user.png")no-repeat 0 0 ;
+}
+.u_logout span{
+    display: inline-block;
+    float: left;
+    width:14px;
+    height:14px;
+    margin-top: 8px;
+    background: url("../images/user.png")no-repeat 0 -14px ;
+}
+.slideDiv li p{
+    float: left;
+    margin-left: 12px;
+}
+.nav_left{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:70px;
+    background-color: #21282e;
+    z-index: 99;
+}
+.nav_left ul li{
+    width:70px;
+    height:70px;
+    cursor: pointer;
+    position: relative;
+}
+.mes_icon1,.mes_icon2,.mes_icon3,.mes_icon4,.mes_icon5,.mes_icon6,.mes_icon7{
+    width:22px;
+    height:22px;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+}
+.tip{
+    display: none;
+    position: absolute;
+    padding:0 5px;
+    line-height:20px ;
+    text-align: center;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    opacity: 0.7;
+    -moz-opacity:0.7;
+    -khtml-opacity:0.7;
+    filter: alpha(opacity=70);
+    white-space:nowrap;
+}
+.mes_icon1{
+    background: url("../images/MES_icon.png") no-repeat 0 0;
+}
+.nav1:hover .mes_icon1,.mes_icon1.active{
+    background: url("../images/MES_icon.png") no-repeat 0 -22px;
+}
+.mes_icon2{
+    background: url("../images/MES_icon.png") no-repeat -22px 0;
+}
+.nav2:hover .mes_icon2,.mes_icon2.active{
+    background: url("../images/MES_icon.png") no-repeat -22px -22px;
+}
+.mes_icon3{
+    background: url("../images/MES_icon.png") no-repeat -44px 0;
+}
+.nav3:hover .mes_icon3,.mes_icon3.active{
+    background: url("../images/MES_icon.png") no-repeat -44px -22px;
+}
+.mes_icon4{
+    background: url("../images/MES_icon.png") no-repeat -66px 0;
+}
+.nav4:hover .mes_icon4,.mes_icon4.active{
+    background: url("../images/MES_icon.png") no-repeat -66px -22px;
+}
+.mes_icon5{
+    background: url("../images/MES_icon.png") no-repeat -88px 0;
+}
+.nav5:hover .mes_icon5,.mes_icon5.active{
+    background: url("../images/MES_icon.png") no-repeat -88px -22px;
+}
+.mes_icon6{
+    background: url("../images/MES_icon.png") no-repeat -110px 0;
+}
+.nav6:hover .mes_icon6,.mes_icon6.active{
+    background: url("../images/MES_icon.png") no-repeat -110px -22px;
+}
+.mes_icon7{
+    background: url("../images/MES_icon.png") no-repeat -132px 0;
+}
+.nav7:hover .mes_icon7,.mes_icon7.active{
+    background: url("../images/MES_icon.png") no-repeat -132px -22px;
+}
+#mainBody{
+    position: absolute;
+    top:0;
+    left:70px;
+    right:0;
+    bottom:0;
+    overflow-x: hidden;
+}
+/*******************添加分组弹框*****************begin*/
+.confirmWin_titleDiv{
+    background-color: #fafafa;
+    border-bottom: 1px solid #e6e6e6;
+}
+.confirmWin_title{
+    color: #4c4c4c;
+    font-weight: bold;
+}
+.confirmWin_closeIcon {
+    margin-top: 16px !important;
+    background: url(../images/f.png)no-repeat center;
+}
+.inputTitle,.modelTitle{
+    float: left;
+    width: 60px;
+    height:30px;
+    margin-top: 20px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #292f33;
+}
+.inputBox,.modelBox{
+    float: left;
+    margin-top: 20px;
+    position: relative;
+}
+.inputBox input{
+    width: 258px !important;
+}
+.modelBox input{
+    width: 500px !important;
+}
+.confirmWin_content input {
+    width: 398px;
+    height: 28px;
+    border: 1px solid #eee;
+    padding: 0 30px 0 10px;
+    margin-bottom: 10px;
+    background: url(../images/pen_1_02.png)no-repeat 512px center;
+}
+.confirmWin_content input{
+    margin-bottom: 0;
+}
+.inputBox input:hover,.inputBox input:focus,.modelBox input:hover,.modelBox input:focus{
+    color: #3bb9d4;
+    border-color: #3bb9d4 !important;
+}
+.confirmWin_enterBtn:hover {
+    background: #3bb9d4;
+}
+.unit{
+    position: absolute;
+    top:3px;
+    right:3px;
+    width:24px;
+    height:24px;
+    background: url("../images/mess_pen.png") no-repeat 0 bottom ;
+}
+.inputBox:hover .unit,.inputBox:focus .unit,.modelBox:hover .unit,.modelBox:focus .unit{
+    background: url("../images/mess_pen.png") no-repeat 0 top;
+}
+#newModelContent{
+    float: left;
+    width:536px;
+    height:115px;
+    border:1px solid #e6e6e6;
+}
+#newModelContent:hover,#newModelContent:focus{
+    color: #3bb9d4;
+    border-color: #3bb9d4 !important;
+}
+.confirmWin_content input{
+    /*background: none;*/
+}
+.confirmWin_content input:hover,.confirmWin_content input:focus{
+    /*background: none;*/
+}
+/*******************添加分组弹框*****************end*/
+
+/*****************批量移除弹框************beigin*/
+.removeWarnContent{
+    width:620px;
+    height:85px;
+    text-align: center;
+    line-height: 85px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #697883;
+    letter-spacing: 1px;
+    background:  url("../images/dele_win.png") no-repeat 22% center;
+}
+.removeWarnContent span{
+    color: #3bb9d4;
+}
+.delIcon{
+    float: left;
+    width:35px;
+    height:35px;
+    margin-top: 20px;
+    margin-left: 35px;
+    background:  url("../images/sea_war.PNG") no-repeat ;
+}
+.delWrap{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.delTitle{
+    line-height: 30px;
+    font-size: 14px;
+    color: #292f33;
+}
+.delTitle span:nth-child(1){
+    color: #3bb9d4;
+}
+.delTitle span:nth-child(2){
+    color: #f6536e;
+}
+.delContent{
+    line-height: 30px;
+    font-size: 12px;
+    color: #666666;
+}
+
+/*****************批量移除弹框************end*/
+/****************导入用户弹框************begin*/
+.operDiv{
+    height:50px;
+}
+.regionSelectDiv,.enterPositionDiv,.searchDiv{
+    float: left;
+}
+#importUserBtn,#batchRemoveBtn{
+    float: right;
+}
+.regionSelectDiv{
+    width: 165px !important;
+    height: 26px !important;
+    margin-top: 10px;
+    margin-left: 14px;
+    border:1px solid #eaeaeb;
+}
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    margin-top: 0;
+    margin-right: 0;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option{
+    left:-1px;
+}
+/****************自定义下拉选择框样式****************end*/
+.enterPositionDiv{
+    width: 126px !important;
+    height: 26px !important;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#enterPosition{
+    width: 121px !important;
+    height: 26px !important;
+    padding-left: 5px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #999999;
+    border:1px solid #eaeaeb;
+}
+.searchDiv{
+    width: 200px !important;
+    height: 28px !important;
+    margin-top: 10px;
+    margin-left: 58px;
+}
+#searchIpt{
+    width: 118px !important;
+    height: 26px !important;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #919aa1;
+    line-height:26px;
+    border:1px solid #dee5e7;
+}
+#searchBtn{
+    float: right;
+    width:40px;
+    height:28px;
+    background: #3bb9d4 url("../images/sea_big.png") no-repeat center;
+    cursor: pointer;
+}
+.listTitle{
+    width:calc(100% - 15*2px);
+    height:40px;
+    margin:0 auto;
+    background: #fafafa;
+}
+.listTitle li{
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+}
+.listTitle li{
+    width:20%;
+}
+.wrap{
+    width:calc(100% - 15*2px);
+    height:160px;
+    margin:0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.listContent li{
+    height:39px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.listContent li  div{
+    float: left;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color: #666666;
+}
+.listContent li:hover div{
+    color: #3bb9d4;
+}
+.listContent li div{
+    width:20%;
+}
+/****************导入用户弹框************end*/
+
+/****************灰色蒙版*************begin*/
+.modelbg{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+}
+/****************灰色蒙版***************end*/
+/*************添加新用户弹框**********begin*/
+#newUserPopup{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 650px;
+    height: 460px;
+    z-index: 999;
+}
+#closeBtn{
+    position: absolute;
+    top:12px;
+    right:20px;
+    width:14px;
+    height:14px;
+    background: url("../images/close.png");
+    cursor: pointer;
+}
+/**************添加新用户弹框*************end*/
+/*************单独修改弹框**********begin*/
+#singleRewritePopup{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 650px;
+    height: 460px;
+    z-index: 999;
+}
+#closeUpBtn{
+    position: absolute;
+    top:12px;
+    right:20px;
+    width:14px;
+    height:14px;
+    background: url("../images/close.png");
+    cursor: pointer;
+}
+/**************单独修改弹框*************end*/
+/*************添加新模板弹框**********begin*/
+#newTemplatePopup{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 650px;
+    height: 460px;
+    z-index: 999;
+}
+#shutBtn{
+    position: absolute;
+    top:12px;
+    right:20px;
+    width:14px;
+    height:14px;
+    background: url("../images/close.png");
+    cursor: pointer;
+}
+/**************添加新用户弹框*************end*/
+.searchDiv{
+    position: relative;
+}
+#searchIcon{
+    display: block;
+    position: absolute;
+    top:8px;
+    right:48px;
+    width:12px ;
+    height: 12px ;
+    cursor: pointer;
+}
+
+.confirmWin_enterBtn {
+    background: #3bb9d4;
+}
+.confirmWin_enterBtn:hover {
+    background: #3BB2D4;
+}
+

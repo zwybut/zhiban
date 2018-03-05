@@ -1,0 +1,174 @@
+#newschedule{
+    width:300px;
+    height:220px;
+    background: #fff;
+}
+.title{
+    height:30px;
+    line-height: 30px;
+    font-weight: bold;
+    border-bottom:1px solid #e6e6e6;
+}
+.title span{
+    font-size: 13px;
+    margin-left: 10px;
+}
+.title p{
+    float: right;
+    font-size: 19px;
+    margin-right:10px;
+    cursor: pointer;
+}
+.startTimeDiv,.endTimeDiv{
+    height:22px;
+    margin-top: 15px;
+}
+.startTimeDiv span,.endTimeDiv span{
+    margin-left: 40px;
+    color: #999;
+}
+
+/****************自定义日期选择框样式****************beigin*/
+.startTimeDiv .textbox ,.endTimeDiv .textbox{
+    width:150px !important;
+    height:22px !important;
+    margin-left: 15px;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    border-color: #d9d9d9 !important;
+
+}
+.startTimeDiv .textbox .textbox-text,.endTimeDiv .textbox .textbox-text{
+    height:15px;
+}
+.startTimeDiv .datebox .combo-arrow ,.endTimeDiv .datebox .combo-arrow{
+    background:  url("../images/cont_map_02.png") no-repeat  center ;
+    height:22px !important;
+}
+.panel-body{
+    height:227px;
+    border:1px solid #d9d9d9;
+}
+.calendar-body .calendar-dtable tbody tr td{
+    height:20px;
+}
+.calendar-selected{
+    background-color: #3bb9d4 !important;
+}
+.calendar-saturday{
+    color: black !important;
+}
+/****************自定义日期选择框样式****************end*/
+.morningShiftTitle,.eveningShiftTitle{
+    height:20px;
+    width:100px;
+    margin-top: 13px;
+    margin-left: 41px;
+    padding-left: 2px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    border-left: 5px solid #3bb9d4;
+}
+.morningShiftContent,.eveningShiftContent{
+    height:24px;
+    margin-top: 10px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #999;
+}
+.morningShiftContent span,.eveningShiftContent span{
+    margin-left: 41px;
+}
+.morningShiftContent input,.eveningShiftContent input{
+    float: right;
+    width:140px;
+    height:24px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #999;
+    padding-left: 10px;
+    margin-right: 39px;
+    border:1px solid #d9d9d9 ;
+}
+.btnDiv{
+    height:24px;
+    margin-top: 33px;
+}
+#deleteBtn,#rewriteBtn{
+    display: none;
+}
+#submitBtn{
+    /*display: none;*/
+}
+#cancelBtn{
+    margin-right: 38px;
+}
+#deleteBtn{
+    margin-right: 10px;
+}
+#deleteBtn,#cancelBtn{
+    float: right;
+    width:65px;
+    height:22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    color: #999;
+    border:1px solid #e6e6e6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#submitBtn,#rewriteBtn{
+    float: right;
+    width:65px;
+    height:22px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    color: #fff;
+    background: #3bb9d4;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.clear{
+    clear: both;
+}
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    float: right;
+    margin-top: 0;
+    margin-right: 39px;
+    margin-left: 0px;
+    border:1px solid #e6e6e6;
+}
+.select_box:hover{
+    border:1px solid #3bb9d4;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option{
+    margin-top: 1px;
+}
+.select_option li.hover{
+    background: #3bb9d4;
+}
+/****************自定义下拉选择框样式****************end*/
+

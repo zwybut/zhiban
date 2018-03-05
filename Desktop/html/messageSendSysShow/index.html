@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵊州市短信报送平台</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/dhtmlxSuite_pro/codebase/dhtmlx.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_index.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="../../../Plugins/dhtmlxSuite_pro/codebase/dhtmlx.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_index.js"></script>
+</head>
+<body>
+<!--<div class="header">-->
+    <!--<div class="header_left"></div>-->
+    <!--<div class="header_right">-->
+        <!--<div class="sysTitle">三门县短信报送平台</div>-->
+        <!--&lt;!&ndash;<div class="loginDiv">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="userName">某某部门</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="loginOut">,退出</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul class="slideDiv">&ndash;&gt;-->
+        <!--&lt;!&ndash;<li class="u_login"><span></span><p>用户登录</p></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li class="u_logout"><span></span><p>用户注销</p></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--</div>-->
+<!--</div>-->
+<div class="nav_left">
+    <ul>
+        <li class="nav1" onclick="messageSendShow()">
+            <div class="mes_icon1 mes_icon active"></div>
+            <div class="tip">消息报送</div>
+        </li>
+        <li class="nav6" onclick="timedSendShow()">
+            <div class="mes_icon6 mes_icon"></div>
+            <div class="tip">定时发送</div>
+        </li>
+        <li class="nav2" onclick="historyMessageShow()">
+            <div class="mes_icon2 mes_icon"></div>
+            <div class="tip">历史消息</div>
+        </li>
+        <li class="nav3" onclick="personGroupShow()">
+            <div class="mes_icon3 mes_icon"></div>
+            <div class="tip">人员分组</div>
+        </li>
+        <li class="nav4" onclick="personManageShow()">
+            <div class="mes_icon4 mes_icon"></div>
+            <div class="tip">人员管理</div>
+        </li>
+        <li class="nav4" onclick="mailListManageShow()">
+            <div class="mes_icon4 mes_icon"></div>
+            <div class="tip">通讯录管理</div>
+        </li>
+        <li class="nav5" onclick="templateMessageShow()">
+            <div class="mes_icon5 mes_icon"></div>
+            <div class="tip">模板消息</div>
+        </li>
+        <li class="nav7" onclick="resultMessagesShow()">
+            <div class="mes_icon7 mes_icon"></div>
+            <div class="tip">预警短信管理</div>
+        </li>
+        <li class="nav7" onclick="SMSconfigShow()">
+            <div class="mes_icon7 mes_icon"></div>
+            <div class="tip">预警短信配置</div>
+        </li>
+    </ul>
+</div>
+<div id="mainBody" name="asd">
+
+</div>
+<!--黑色蒙版-->
+<div class="modelbg"></div>
+<!--添加新模板弹框-->
+<div id="newTemplatePopup">
+    <iframe src="messageSend_addNewTemplate.html" width="650px" height="400px" frameborder="0" id="addiframe"></iframe>
+    <div id="shutBtn"></div>
+</div>
+</body>
+</html>

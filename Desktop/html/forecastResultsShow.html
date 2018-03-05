@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预报成果查询</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/easyui/themes/gt_warn/easyui.css"/>
+    <link rel="stylesheet" href="../css/forecastResultsShow.css">
+
+    <script type='text/javascript' src="../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../Plugins/highcharts/js/highcharts.js"></script>
+    <script type='text/javascript' src="../../Plugins/highcharts/js/modules/no-data-to-display.src.js"></script>
+    <script type='text/javascript' src="../../Plugins/spinloading/spin.min.js"></script>
+
+    <script type="text/javascript" src="../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+
+    <script type='text/javascript' src="../js/forecastResultsShow.js"></script>
+
+</head>
+<body>
+<div class="fcr_left">
+    <div class="tit">断面选择</div>
+    <ul class="sections" id="sections">
+    </ul>
+</div>
+<div class="fcr_center">
+    <div class="tit">预报场次</div>
+    <div class="sel_times">
+        <p>开始时间：</p>
+        <input id="startTime" >
+        <p>结束时间：</p>
+        <input id="endTime">
+    </div>
+    <ul class="sel_days">
+    </ul>
+</div>
+<div class="fcr_right">
+    <div class="tit">预报图表</div>
+    <div id="chartBox"></div>
+    <div id="loadingDiv">
+        <div id="spinLoading"></div>
+    </div>
+</div>
+</body>
+</html>

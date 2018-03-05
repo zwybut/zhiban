@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水库水位估报</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/easyui/themes/gt_warn/easyui.css"/>
+    <link rel="stylesheet" href="../css/rsvLevelForecastShow.css">
+
+    <script type='text/javascript' src="../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../Plugins/highcharts/js/highcharts.js"></script>
+    <script type='text/javascript' src="../../Plugins/spinloading/spin.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type='text/javascript' src="../js/rsvLevelForecastShow.js"></script>
+
+</head>
+<body>
+<div class="rsv_left">
+    <div class="tit">水库站点</div>
+    <div class="sta">
+        <ul id="rsvrList">
+        </ul>
+    </div>
+</div>
+<div class="rsv_right">
+    <div class="tit">计算参数</div>
+    <div id="chartBox"></div>
+    <div class="loadingDiv">
+        <div class="spinLoading"></div>
+    </div>
+</div>
+
+</body>
+</html>

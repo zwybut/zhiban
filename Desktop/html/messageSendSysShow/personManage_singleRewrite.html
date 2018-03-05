@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户弹框</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_personManage_singleRewrite.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_personManage_singleRewrite.js"></script>
+</head>
+<body>
+<div id="personManage_addNewUser">
+    <div class="title">修改用户</div>
+    <div class="content">
+        <span class="fl">真实姓名</span>
+        <input type="text" placeholder="请输入人员名称" class="inputText" id="userId"><p>*</p>
+        <span>人员性别</span>
+        <input type="radio" name="0" class="regular-radio" id="radio-0" value="男"><label for="radio-0"></label>
+        <span>男</span>
+        <input type="radio" name="0" class="regular-radio" id="radio-1" value="女"><label for="radio-1"></label>
+        <span>女</span>
+    </div>
+    <div class="content">
+        <span class="selectIntroduce">所在地区</span>
+        <!--<input type="text" id="regionSelect" placeholder="请输入所在地区名称">-->
+        <!--<p>*</p>-->
+        <select id="regionSelect">
+        </select>
+        <span>所在街道</span>
+        <input type="text" id="streetSelect" placeholder="请输入所在街道名称">
+        <!--<select id="regionSelect">-->
+        <!--<option value="选择区域">选择区域</option>-->
+        <!--<option value="区域一">区域一</option>-->
+        <!--<option value="区域二">区域二</option>-->
+        <!--<option value="区域三">区域三</option>-->
+        <!--</select>-->
+        <!--<select id="streetSelect">-->
+        <!--<option value="选择街道">选择街道</option>-->
+        <!--<option value="街道一">街道一</option>-->
+        <!--<option value="街道二">街道二</option>-->
+        <!--<option value="街道三">街道三</option>-->
+        <!--</select>-->
+    </div>
+    <div class="content">
+        <span class="fl">移动电话</span>
+        <input type="text" placeholder="请输入人员电话" class="inputText" id="mobileNum">
+        <p>*</p>
+        <span class="pensonJob">人员职位</span>
+        <input type="text" placeholder="请输入人员职位名称" class="inputText" id="positionName">
+        <!--<div class="notice">*</div>-->
+    </div>
+    <div class="content">
+        <span class="selectIntroduce">人员岗位</span>
+        <input type="text" id="jobSelect" placeholder="请输入人员岗位名称">
+        <!--<select id="jobSelect">-->
+        <!--<option value="选择岗位">选择岗位</option>-->
+        <!--<option value="岗位一">岗位一</option>-->
+        <!--<option value="岗位二">岗位二</option>-->
+        <!--<option value="岗位三">岗位三</option>-->
+        <!--</select>-->
+        <span>所在单位</span>
+        <input type="text" placeholder="请输入人员所在单位" class="inputText" id="unit">
+    </div>
+    <div class="content">
+        <span class="selectIntroduce">所在部门</span>
+        <input type="text" id="departmentSelect" placeholder="请输入所在部门名称">
+        <!--<select id="departmentSelect">-->
+        <!--<option value="选择部门">选择部门</option>-->
+        <!--<option value="部门一">部门一</option>-->
+        <!--<option value="部门二">部门二</option>-->
+        <!--<option value="部门三">部门三</option>-->
+        <!--</select>-->
+        <span>固定电话</span>
+        <input type="text" placeholder="请输入人员固定电话" class="inputText" id="tel">
+    </div>
+    <div class="content">
+        <span class="fl">单位地址</span>
+        <input type="text" placeholder="请输入单位所在地址" class="iptText" id="address">
+    </div>
+    <div class="content">
+        <span class="fl">备注</span>
+        <input type="text" class="iptText iptText_" id="memo">
+    </div>
+    <div class="foot">
+        <div id="cancelBtn" class="ui-button-gray">取消</div>
+        <div id="updateUserBtn" class="ui-button" aid="">确定修改</div>
+    </div>
+</div>
+</body>
+</html>

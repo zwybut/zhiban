@@ -1,0 +1,281 @@
+.left{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:240px;
+    border-right: 1px solid #eaeaeb;
+}
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.left .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/MES_send.png") no-repeat left center;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.addGroup{
+    height:38px;
+    border-top:1px solid #eaeaeb;
+    border-bottom:1px solid #eaeaeb;
+}
+.addGroup span{
+    margin-left: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 38px;
+    color: #333333;
+}
+#addGroupBtn{
+    float: right;
+    width:16px;
+    height:16px;
+    margin-top: 11px;
+    margin-right: 25px;
+    background: url("../images/data_add.png");
+    cursor: pointer;
+}
+.right .title p{
+    float: left;
+    width:20px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/mes_group.png") no-repeat right center;
+}
+.right{
+    position: absolute;
+    top:0;
+    left:241px;
+    right:0;
+    bottom: 0;
+}
+.operDiv{
+    height:70px;
+}
+.regionSelectDiv,.enterPositionDiv,.searchDiv{
+    float: left;
+}
+
+#importUserBtn,#batchRemoveBtn{
+    float: right;
+}
+.regionSelectDiv{
+    width:165px;
+    height:26px;
+    margin-top: 21px;
+    margin-left: 21px;
+    border:1px solid #eaeaeb;
+}
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    margin-top: 0;
+    margin-right: 0;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option{
+    left:-1px;
+}
+/****************自定义下拉选择框样式****************end*/
+
+/***********添加报表弹框**********begin*/
+.save_popup .select_box{
+    float: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.save_popup input{
+    margin-top: 5px;
+}
+.save_popup .tips{
+    color: red;
+    padding-left: 10px;
+    display: none;
+}
+.confirmWin_enterBtn{
+    background: #3bb9d4;
+}
+.confirmWin_enterBtn:hover{
+    background:#3bb9d4;
+}
+.confirmWin_content input:hover, .confirmWin_content input:focus{
+    border:1px solid #3bb9d4;
+    background: url(../images/ed.png) no-repeat 412px;
+}
+.save_popup .select_showbox{
+    color: #fff;
+    background: #3bb9d4 url(../images/triangleicon_03.png) no-repeat 0 center;
+}
+.save_popup .select_option{
+    left:0;
+}
+/***********添加报表弹框**********end*/
+
+.enterPositionDiv{
+    width:126px;
+    height:26px;
+    margin-top: 21px;
+    margin-left: 21px;
+}
+#enterPosition{
+    width:118px;
+    height:26px;
+    padding-left: 8px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #999999;
+    border:1px solid #eaeaeb;
+}
+.searchDiv{
+    width:163px;
+    height:28px;
+    margin-top: 21px;
+    margin-left: 23px;
+}
+#searchIpt{
+    width:113px;
+    height:26px;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #919aa1;
+    line-height:26px;
+    border:1px solid #dee5e7;
+}
+#searchBtn{
+    float: right;
+    width:40px;
+    height:28px;
+    background: #3bb9d4 url("../images/sea_big.png") no-repeat center;
+    cursor: pointer;
+}
+#importUserBtn{
+    width:98px;
+    height:26px;
+    margin-top: 22px;
+    margin-right: 21px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb9d4;
+    cursor: pointer;
+}
+#batchRemoveBtn{
+    width:98px;
+    height:26px;
+    margin-top: 22px;
+    margin-right: 21px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+    border:1px solid #dee5e7;
+    cursor: pointer;
+}
+.listTitle{
+    width:calc(100% - 15*2px);
+    height:40px;
+    margin:0 auto;
+    background: #fafafa;
+}
+.listTitle li{
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+}
+.listTitle li:nth-child(1){
+    width:10%;
+}
+.listTitle li:nth-child(2),.listTitle li:nth-child(3),.listTitle li:nth-child(4),.listTitle li:nth-child(5),.listTitle li:nth-child(6){
+    width:18%;
+}
+.wrap{
+    width:calc(100% - 15*2px);
+    margin:0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.listContent li{
+    height:39px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.listContent li  div{
+    float: left;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color: #666666;
+}
+.listContent li:hover div{
+    color: #3bb9d4;
+}
+.listContent li div:nth-child(1){
+    width:10%;
+}
+.listContent li div:nth-child(2),.listContent li div:nth-child(3),.listContent li div:nth-child(4),.listContent li div:nth-child(5),.listContent li div:nth-child(6){
+    width:18%;
+}
+.listContent li div:nth-child(6){
+    position: relative;
+}
+.operBtn{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    width:18px;
+    height:18px;
+    margin:auto;
+    background: url("../images/mes_move.png") no-repeat 0 top;
+    cursor: pointer;
+}
+.listContent li:hover .operBtn{
+    background: url("../images/mes_move.png") no-repeat 0 bottom;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+    font-weight: normal;
+    color: #999;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+    color: #fff;
+}
+.select_option li.hover{
+    background: #3bb9d4 ;
+}
+ul .tree-node-selected .tree-title {
+    background: #3bb9d4;
+    color: #fff;
+}
+.tree-node-hover{
+    color: #3bb9d4;
+}

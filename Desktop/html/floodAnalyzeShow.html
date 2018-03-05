@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta name="Content-Type" content="text/html;charset=utf-8">
+    <title>水情报表生成</title>
+    <link rel="stylesheet" href="../../Plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Plugins/jquery/toast/jquery.toast.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Plugins/easyui/themes/gt_warn/easyui.css"/>
+    <link rel="stylesheet" href="../../Plugins/kindeditor/themes/default/default.css" media="all">
+    <link rel="stylesheet" href="../../Plugins/customPlugins/widgets_default.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/leftNavInfoShow.css">
+    <link rel="stylesheet" href="../css/floodAnalyze.css">
+
+    <script type='text/javascript' src="../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../Plugins/jquery/toast/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/layui/layui.js"></script>
+    <script type='text/javascript' src="../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+    <script type="text/javascript" src="../../Plugins/customPlugins/widgets.js"></script>
+
+    <script type="text/javascript" src="../../Plugins/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../Plugins/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="../../Plugins/js_api/Blob.js"></script>
+    <script type="text/javascript" src="../../Plugins/js_api/FileSaver.js"></script>
+
+    <script type='text/javascript' src="../../Plugins/spinloading/spin.min.js"></script>
+
+    <script type='text/javascript' src="../js/leftNavInfoShow.js"></script>
+    <script type='text/javascript' src="../js/floodAnalyze.js"></script>
+
+</head>
+<body>
+
+<div class="userList">
+    <div class="userListContent">
+        <div class="reportFormTitle active">
+            <div class="rft1"></div>
+            <div class="rft2">雨情报表</div>
+            <div class="rft3"></div>
+        </div>
+        <div class="reportFormContent" type="RainReport">
+            <ul>
+                <li class="active" modelId="ZoneRainInfo">分区雨量</li>
+                <li modelId="RainHourJZ">雨量时段极值</li>
+                <li modelId="RainDayJZ">雨量日极值</li>
+                <!--<li>大中型水库库区雨量</li>-->
+                <!--<li modelId="ZoneStormRain">分区暴雨预警表</li>-->
+                <li modelId="StationSumRain">累计雨量统计表</li>
+                <!--<li modelId="FixStationHourPL">多站逐时雨量过程表</li>-->
+                <li modelId="SingleRainJZ">单站暴雨统计表</li>
+            </ul>
+        </div>
+        <div class="reportFormTitle">
+            <div class="rft1 rft1_2"></div>
+            <div class="rft2">水情报表</div>
+            <div class="rft3"></div>
+        </div>
+        <div class="reportFormContent" type="WaterReport">
+            <ul>
+                <li modelId="FixRiverPLInfo">江河水位过程表</li>
+                <li modelId="RsvrPLInfo">水库水位过程表</li>
+                <li modelId="RsvrWarnInfo">水库超汛情况表</li>
+                <li modelId="RiverWarnInfo">河道超警情况表</li>
+                <!--<li modelId="TideAddZInfo">潮位增水分析表</li>-->
+                <li modelId="LargeMiddleRsvrAddRain">大中型水库雨量水位分析表</li>
+            </ul>
+        </div>
+        <div class="reportFormTitle">
+            <div class="rft1 rft1_3"></div>
+            <div class="rft2">综合报表</div>
+            <div class="rft3"></div>
+        </div>
+        <div class="reportFormContent" type="FloodReport">
+            <ul>
+                <li modelId="FloodDetailInfo">汛情通报</li>
+                <!--<li modelId="LastFloodInfo">最新风水雨情</li>-->
+                <!--<li modelId="TyphoonFloodInfo">台风汛情通告</li>-->
+                <!--<li modelId="FloodInfo">汛情单</li>-->
+                <li modelId="dayRainfallInfo">日雨量</li>
+                <!--<li modelId="hourRainfallInfo">时雨量</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="main main_Analyze">
+    <!--<h2>雨情信息</h2>-->
+    <div class="AnalyzeBox">
+        <h3>分区雨量</h3>
+        <div class="category clearfix">
+            <select id="ZoneType">
+                <option value="XS" selected="selected">分乡镇</option>
+                <option value="LY">分流域</option>
+            </select>
+            <div id="FixTimeSelDiv">
+                <p class="fl">时间选择:</p>
+                <select id="FixTimeSel">
+                    <option value="1" >昨日</option>
+                    <option value="0" >今日</option>
+                    <option value="2" >前二日</option>
+                    <option value="3" >前三日</option>
+                    <option value="4" >前五日</option>
+                    <option value="-2" >自定义</option>
+                </select>
+            </div>
+
+            <div id="ZoneStcdSelDiv">
+                <p class="fl">计算站点：</p>
+                <select id="ZoneStcdSel">
+                    <option value="0" >固定站</option>
+                    <option value="1" selected="selected">所有站</option>
+                    <option value="2" >省级站</option>
+                </select>
+            </div>
+
+            <div class="setTime fl" id="setTime">
+                <p>起始：</p><input id="StartTime" type="text" style="width:110px;"/>
+                <p>终止：</p><input id="EndTime" type="text" style="width:110px;"/>
+            </div>
+
+            <div class="setTime fl" id="setDate">
+                <p>起始：</p><input id="StartDate" type="text" style="width:100px;"/>
+                <p>终止：</p><input id="EndDate" type="text" style="width:100px;"/>
+            </div>
+
+            <div class="setTime fl" id="FixTimeDiv">
+                <p>时间:</p><input id="FixTime" type="text" style="width:130px;"/>
+            </div>
+
+            <div id="StcdDiv" class="fl">
+                <p class="fl">站点选择：</p>
+                <select id="Stcd" >
+                    <option value="70402000" >海门</option>
+                    <option value="70705200" >健跳</option>
+                </select>
+            </div>
+
+            <div id="AllStcdDiv">
+                <p class="fl">&nbsp;&nbsp;&nbsp;站点选择：</p>
+                <select id="AllStcd" >
+                </select>
+            </div>
+
+            <div id="MinRainDiv" class="fl">
+                <p class="fl">&nbsp;&nbsp;&nbsp;最小雨量：</p>
+                <input id="MinRain" value="0" style="width:50px;text-align:center"/>&nbsp;&nbsp;mm
+            </div>
+
+            <!--<div id="BlcDiv" class="fl">-->
+                <!--<p class="fl">&nbsp;&nbsp;&nbsp;经流系数：</p>-->
+                <!--<input id="Blc" value="0.8" style="width:50px;text-align:center"/>-->
+            <!--</div>-->
+            <div id="BlcListDiv" class="fl">
+                <p class="fl">&nbsp;&nbsp;&nbsp;径流系数列表：</p>
+                <input id="BlcList" value="0.5,0.6,0.65,0.7,0.8" style="width:160px;text-align:center"/>
+            </div>
+
+            <button class="fr ui-button" type="submit" id="submitInfo">生成报表</button>
+        </div>
+
+        <div class="myeditorbox" id="myeditorbox">
+            <textarea id="myeditor">
+                <!--<h2 align=center>6月11日三门县汛情表</h2>-->
+                <!--<table id="floodTab" border='1' align=center style="width: 800px;border-collapse:collapse; margin:0 auto;">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th height=30>名称</th>-->
+                        <!--<th colspan="2">内容</th>-->
+                        <!--<th>正常值(警戒值)</th>-->
+                        <!--<th>6月11日17时</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="3" align=center>风情</td>-->
+                        <!--<td colspan="2" align=center>沿海风力</td>-->
+                        <!--<td align=center height=30></td>-->
+                        <!--<td align=center></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td colspan="2" align=center>内陆风力</td>-->
+                        <!--<td align=center height=30></td>-->
+                        <!--<td align=center></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td colspan="2" align=center>最大风力</td>-->
+                        <!--<td align=center height=30></td>-->
+                        <!--<td align=center></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="2" align=center>雨情</td>-->
+                        <!--<td colspan="2" align=center>全县平均雨量(mm)</td>-->
+                        <!--<td align=center height=30></td>-->
+                        <!--<td align=center>28.8</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td colspan="2" align=center>最大雨量站点(mm)</td>-->
+                        <!--<td align=center height=30></td>-->
+                        <!--<td align=center>39(龙王殿水库站)</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="12" align=center>水情</td>-->
+                        <!--<td rowspan="3" align=center>总体情况</td>-->
+                        <!--<td align=center height=30>总蓄水量(万m³)</td>-->
+                        <!--<td align=center>5358.76</td>-->
+                        <!--<td align=center>3709.26</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>总蓄水率(%)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>69.2</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>可拦蓄水量(万m³)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>1649.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="3" align=center>中型水库(佃石水库)</td>-->
+                        <!--<td align=center height=30>储蓄量(万m³)</td>-->
+                        <!--<td align=center>2563</td>-->
+                        <!--<td align=center>5217</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>储蓄率(%)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>84.9</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>水位(米)</td>-->
+                        <!--<td align=center>103</td>-->
+                        <!--<td align=center>101.6</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="2" align=center>小(一)型水库</td>-->
+                        <!--<td align=center height=30>储蓄量(万m³)</td>-->
+                        <!--<td align=center>1935.64</td>-->
+                        <!--<td align=center>1102.99</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>储蓄率(%)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>57.00</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="2" align=center>小(二)型水库</td>-->
+                        <!--<td align=center height=30>储蓄量(万m³)</td>-->
+                        <!--<td align=center>792.91</td>-->
+                        <!--<td align=center>421.91</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>储蓄率(%)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>49.10</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="2" align=center>水位</td>-->
+                        <!--<td align=center height=30>深海大桥站(m)</td>-->
+                        <!--<td align=center>5.6</td>-->
+                        <!--<td align=center>2.85</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>洞港内河(m)</td>-->
+                        <!--<td align=center>1.8</td>-->
+                        <!--<td align=center>0.7</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="2" align=center>潮位</td>-->
+                        <!--<td rowspan="2" align=center>健跳</td>-->
+                        <!--<td align=center height=30>健跳站实测值(m)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center>2.79</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td align=center height=30>健跳站预计高潮位(m)</td>-->
+                        <!--<td align=center></td>-->
+                        <!--<td align=center></td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+
+                <!--<h2 align=center>日雨量统计表</h2>-->
+                <!--<table id="dayRainfallTab" border='1' align=center style="width:10000px; border-collapse:collapse; margin:0 auto;">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>时间</th>-->
+                        <!--<th>竹岭坑水库(雷)</th>-->
+                        <!--<th>下叶水库(雷)</th>-->
+                        <!--<th>刘家</th>-->
+                        <!--<th>桥头</th>-->
+                        <!--<th>巡检司</th>-->
+                        <!--<th>海游</th>-->
+                        <!--<th>里浦</th>-->
+                        <!--<th>珠岙</th>-->
+                        <!--<th>罗岙(1)水库</th>-->
+                        <!--<th>石门(1)水库</th>-->
+                        <!--<th>王申坦(1)水库</th>-->
+                        <!--<th>大岙田(2)水库</th>-->
+                        <!--<th>龙皇殿(2)水库</th>-->
+                        <!--<th>健跳(雨量)</th>-->
+                        <!--<th>山场</th>-->
+                        <!--<th>佃石雨量</th>-->
+                        <!--<th>小岭水库(雷)</th>-->
+                        <!--<th>前潭站</th>-->
+                        <!--<th>天门</th>-->
+                        <!--<th>佃石水库(北)</th>-->
+                        <!--<th>刘家(北)</th>-->
+                        <!--<th>珠岙(北)</th>-->
+                        <!--<th>文明</th>-->
+                        <!--<th>海游(北)</th>-->
+                        <!--<th>巡检司(北)</th>-->
+                        <!--<th>健跳(北)</th>-->
+                        <!--<th>里浦(北)</th>-->
+                        <!--<th>龙潭坑水库(雷)</th>-->
+                        <!--<th>里峙水库(雷)</th>-->
+                        <!--<th>路下水库(雷)</th>-->
+                        <!--<th>黄山塘水库(雷)</th>-->
+                        <!--<th>里岙水库(雷)</th>-->
+                        <!--<th>石门水库(雷)</th>-->
+                        <!--<th>西渡岭头</th>-->
+                        <!--<th>桥头(北)</th>-->
+                        <!--<th>峙洋水库(雷)</th>-->
+                        <!--<th>山前</th>-->
+                        <!--<th>楼下郑</th>-->
+                        <!--<th>里宅</th>-->
+                        <!--<th>下山(洞港闸)</th>-->
+                        <!--<th>罗岙水库(雷)</th>-->
+                        <!--<th>前楼</th>-->
+                        <!--<th>叶家庄</th>-->
+                        <!--<th>园里</th>-->
+                        <!--<th>吴岙</th>-->
+                        <!--<th>溪头杨</th>-->
+                        <!--<th>浮门水库(雷)</th>-->
+                        <!--<th>前山</th>-->
+                        <!--<th>三山蒸发</th>-->
+                        <!--<th>马湖流速</th>-->
+                        <!--<th>南林流速</th>-->
+                        <!--<th>海游(2)</th>-->
+                        <!--<th>山场(2)</th>-->
+                        <!--<th>路下(1)水库</th>-->
+                        <!--<th>黄山塘(1)水库</th>-->
+                        <!--<th>下叶(1)水库</th>-->
+                        <!--<th>施家岙(1)水库</th>-->
+                        <!--<th>尖坑山(1)水库</th>-->
+                        <!--<th>辽车</th>-->
+                        <!--<th>里毛洋(2)水库</th>-->
+                        <!--<th>石鼓牛(2)水库</th>-->
+                        <!--<th>湫水寺(2)水库</th>-->
+                        <!--<th>里院(2)水库</th>-->
+                        <!--<th>朝阳(2)水库</th>-->
+                        <!--<th>巡检司(2)</th>-->
+                        <!--<th>健跳(潮位2)</th>-->
+                        <!--<th>健跳(雨量2)</th>-->
+                        <!--<th>里浦(2)</th>-->
+                        <!--<th>桥头(2)</th>-->
+                        <!--<th>刘家(2)</th>-->
+                        <!--<th>珠岙(2)</th>-->
+                        <!--<th>山后周(2)水库</th>-->
+                        <!--<th>里步蛟(2)水库</th>-->
+                        <!--<th>沿江(2)水库</th>-->
+                        <!--<th>洞港闸</th>-->
+                        <!--<th>东屏</th>-->
+                        <!--<th>界岙</th>-->
+                        <!--<th>界岙(2)</th>-->
+                        <!--<th>佃石雨量(2)</th>-->
+                        <!--<th>高坑</th>-->
+                        <!--<th>海游大桥</th>-->
+                        <!--<th>路下周</th>-->
+                        <!--<th>上鲍</th>-->
+                        <!--<th>小坑</th>-->
+                        <!--<th>胡村</th>-->
+                        <!--<th>南山</th>-->
+                        <!--<th>石燕</th>-->
+                        <!--<th>关头闸</th>-->
+                        <!--<th>长林</th>-->
+                        <!--<th>上界溪</th>-->
+                        <!--<th>汪家洋</th>-->
+                        <!--<th>赖岙</th>-->
+                        <!--<th>叶家</th>-->
+                        <!--<th>岭根陈</th>-->
+                        <!--<th>天台尖山</th>-->
+                        <!--<th>马湖水文站</th>-->
+                        <!--<th>马湖水文站(2)</th>-->
+                        <!--<th>施加岙水库(雷)</th>-->
+                        <!--<th>国2健跳(北)</th>-->
+                        <!--<th>平均雨量</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-10</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-11</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-12</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-13</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>总雨量</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>5</td>-->
+                        <!--<td>6</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>8</td>-->
+                        <!--<td>9</td>-->
+                        <!--<td>10</td>-->
+                        <!--<td>11</td>-->
+                        <!--<td>12</td>-->
+                        <!--<td>13</td>-->
+                        <!--<td>14</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>16</td>-->
+                        <!--<td>17</td>-->
+                        <!--<td>18</td>-->
+                        <!--<td>19</td>-->
+                        <!--<td>20</td>-->
+                        <!--<td>21</td>-->
+                        <!--<td>22</td>-->
+                        <!--<td>23</td>-->
+                        <!--<td>24</td>-->
+                        <!--<td>25</td>-->
+                        <!--<td>26</td>-->
+                        <!--<td>27</td>-->
+                        <!--<td>28</td>-->
+                        <!--<td>29</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>31</td>-->
+                        <!--<td>32</td>-->
+                        <!--<td>33</td>-->
+                        <!--<td>34</td>-->
+                        <!--<td>35</td>-->
+                        <!--<td>36</td>-->
+                        <!--<td>37</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>39</td>-->
+                        <!--<td>40</td>-->
+                        <!--<td>41</td>-->
+                        <!--<td>42</td>-->
+                        <!--<td>43</td>-->
+                        <!--<td>44</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>46</td>-->
+                        <!--<td>47</td>-->
+                        <!--<td>48</td>-->
+                        <!--<td>49</td>-->
+                        <!--<td>50</td>-->
+                        <!--<td>51</td>-->
+                        <!--<td>52</td>-->
+                        <!--<td>53</td>-->
+                        <!--<td>54</td>-->
+                        <!--<td>55</td>-->
+                        <!--<td>56</td>-->
+                        <!--<td>57</td>-->
+                        <!--<td>58</td>-->
+                        <!--<td>59</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>61</td>-->
+                        <!--<td>62</td>-->
+                        <!--<td>63</td>-->
+                        <!--<td>64</td>-->
+                        <!--<td>65</td>-->
+                        <!--<td>66</td>-->
+                        <!--<td>67</td>-->
+                        <!--<td>68</td>-->
+                        <!--<td>69</td>-->
+                        <!--<td>70</td>-->
+                        <!--<td>71</td>-->
+                        <!--<td>72</td>-->
+                        <!--<td>73</td>-->
+                        <!--<td>74</td>-->
+                        <!--<td>75</td>-->
+                        <!--<td>76</td>-->
+                        <!--<td>77</td>-->
+                        <!--<td>78</td>-->
+                        <!--<td>79</td>-->
+                        <!--<td>80</td>-->
+                        <!--<td>81</td>-->
+                        <!--<td>82</td>-->
+                        <!--<td>83</td>-->
+                        <!--<td>84</td>-->
+                        <!--<td>85</td>-->
+                        <!--<td>86</td>-->
+                        <!--<td>87</td>-->
+                        <!--<td>88</td>-->
+                        <!--<td>89</td>-->
+                        <!--<td>90</td>-->
+                        <!--<td>91</td>-->
+                        <!--<td>92</td>-->
+                        <!--<td>93</td>-->
+                        <!--<td>94</td>-->
+                        <!--<td>95</td>-->
+                        <!--<td>96</td>-->
+                        <!--<td>97</td>-->
+                        <!--<td>98</td>-->
+                        <!--<td>99</td>-->
+                        <!--<td>100</td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+
+                <!--<h2 align=center>时雨量统计表</h2>-->
+                <!--<table id="hourRainfallTab" border='1' align=center style="width:1000px; border-collapse:collapse; margin:0 auto;">-->
+                     <!--<thead>-->
+                     <!--<tr>-->
+                         <!--<th>时间</th>-->
+                         <!--<th>天门</th>-->
+                         <!--<th>佃石水库(北)</th>-->
+                         <!--<th>刘家(北)</th>-->
+                         <!--<th>珠岙(北)</th>-->
+                         <!--<th>平均雨量</th>-->
+                     <!--</tr>-->
+                     <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 09:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 10:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 11:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 12:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 13:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 14:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 15:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 16:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 17:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 18:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 19:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 20:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 21:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 22:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2017-06-09 23:00</td>-->
+                        <!--<td>1</td>-->
+                        <!--<td>2</td>-->
+                        <!--<td>3</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>2.5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>总雨量</td>-->
+                        <!--<td>15</td>-->
+                        <!--<td>30</td>-->
+                        <!--<td>45</td>-->
+                        <!--<td>60</td>-->
+                        <!--<td>37.5</td>-->
+                    <!--</tr>-->
+
+                    <!--</tbody>-->
+                <!--</table>-->
+            </textarea>
+            <div id="loadingDiv">
+                <div id="spinLoading"></div>
+            </div>
+        </div>
+        <div class="operation">
+            <button type="submit" class="export ui-button" onclick=ReportExport();>导出</button>
+            <button type="submit" class="save ui-button" onclick=ReportSave();>保存</button>
+            <button type="submit" class="print ui-button" onclick=ReportPrint();>打印</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

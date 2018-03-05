@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新用户弹框</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_mailListManage_addNewUser.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_mailListManage_addNewUser.js"></script>
+</head>
+<body>
+<div id="mailListManage_addNewUser">
+    <div id="addNewUser">
+        <div class="title">添加人员</div>
+        <div class="main">
+            <span>真实姓名</span>
+            <input type="text" placeholder="请输入人员名称" id="trueName"><p>*</p>
+            <span>人员性别</span>
+            <input type="radio" name="0" class="regular-radio" id="radio-0" value="男" checked><label for="radio-0"></label>
+            <span style="width: 20px;">男</span>
+            <input type="radio" name="0" class="regular-radio" id="radio-1" value="女"><label for="radio-1"></label>
+            <span>女</span>
+        </div>
+        <div class="main" id="regionSel">
+            <span>所在地</span>
+            <div class="regionSelectDiv fl">
+                <select id="regionSelect">
+                    <option value="" selected="selected">选择区域</option>
+                    <option value="嵊州市">嵊州市</option>
+                </select>
+            </div>
+            <div class="streetSelectDiv fl">
+                <select id="streetSelect">
+                    <option value="" selected="selected">选择街道</option>
+                    <option value="">街道一</option>
+                    <option value="">街道二</option>
+                    <option value="">街道三</option>
+                </select>
+            </div>
+        </div>
+        <div class="main">
+            <span>移动电话</span>
+            <input type="text" id="telPhone" placeholder="请输入人员电话">
+            <p>*</p>
+            <span>人员职位</span>
+            <input type="text" id="position" placeholder="请输入人员职位名称">
+            <p>*</p>
+        </div>
+        <div class="main">
+            <span>所在单位</span>
+            <div class="unitSelectDiv fl">
+                <select id="unitSelect">
+                    <option value="" selected="selected">选择单位</option>
+                    <option value="">单位一</option>
+                    <option value="">单位二</option>
+                    <option value="">单位三</option>
+                </select>
+            </div>
+            <span>所在部门</span>
+            <input type="text" id="departmentSelect" placeholder="请输入所在部门名称">
+        </div>
+        <div class="main">
+            <span>固定电话</span>
+            <input type="text" id="tel" placeholder="请输入人员固定电话">
+            <span>单位地址</span>
+            <input type="text" id="address" placeholder="请输入单位地址">
+        </div>
+        <div class="main">
+            <span>备注</span>
+            <input type="text" id="memo" style="width: 542px;;">
+        </div>
+        <div class="foot">
+            <div id="cancelBtn" class="ui-button-gray">取消</div>
+            <div id="nextBtn" class="ui-button">下一步</div>
+        </div>
+    </div>
+    <div id="SMSconcern">
+        <div class="title">短信关注站点</div>
+        <div class="conditionType">
+            <ul class="siteTypeTab fl">
+                <li modeId="concernSite">关注站点</li>
+                <li modeId="warnSite">预警站点</li>
+            </ul>
+            <div class="searchDiv fr">
+                <input type="text" placeholder="模糊搜索" id="searchIpt">
+                <div class="ui-button" id="searchBtn"></div>
+            </div>
+            <div class="selectDiv fr">
+                <select id="regionSelect2">
+                    <option value="">请选择区域</option>
+                    <option value="">区域一</option>
+                    <option value="">区域二</option>
+                    <option value="">区域三</option>
+                </select>
+            </div>
+            <div class="selectDiv fr">
+                <select id="zoneSelect">
+                    <option value="">区域选择</option>
+                    <option value="">区域一</option>
+                    <option value="">区域二</option>
+                    <option value="">区域三</option>
+                </select>
+            </div>
+        </div>
+        <div class="content" id="concernSite">
+            <div class="allSiteContainer">
+                <div class="allSiteTitle">
+                    <input type="checkbox" class="regular-checkbox" id="checkbox-1-all"><label for="checkbox-1-all" class="fl" style="margin-top: 8px"></label>
+                    <span class="fl">全选</span>
+                    <div class="fl">&nbsp;&nbsp;&nbsp;(<b></b>默认每天8:00向您发送已关注站点的前10名雨情信息和超限水位短信)</div>
+                </div>
+                <div class="allSiteContent">
+                    <ul class="noticeSite">
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-1"><label for="checkbox-1-1"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-2"><label for="checkbox-1-2"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-3"><label for="checkbox-1-3"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-4"><label for="checkbox-1-4"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-5"><label for="checkbox-1-5"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-6"><label for="checkbox-1-6"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-7"><label for="checkbox-1-7"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-8"><label for="checkbox-1-8"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-9"><label for="checkbox-1-9"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-10"><label for="checkbox-1-10"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-11"><label for="checkbox-1-11"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-12"><label for="checkbox-1-12"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-13"><label for="checkbox-1-13"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-14"><label for="checkbox-1-14"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-15"><label for="checkbox-1-15"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-16"><label for="checkbox-1-16"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-17"><label for="checkbox-1-17"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-18"><label for="checkbox-1-18"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-19"><label for="checkbox-1-19"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-1-20"><label for="checkbox-1-20"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="concernedSiteContainer">
+                <div class="concernedSiteTitle">
+                    <span>已关注站点</span>
+                    <span>(已关注<span>8</span>个站点)</span>
+                    <div class="fr" id="delBtn"><div class="tip">点击删除已关注站点</div></div>
+                </div>
+                <div class="concernedSiteContent">
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_1"><label for="checkbox_1_1"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_2"><label for="checkbox_1_2"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_3"><label for="checkbox_1_3"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_4"><label for="checkbox_1_4"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_5"><label for="checkbox_1_5"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_6"><label for="checkbox_1_6"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_7"><label for="checkbox_1_7"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_1_8"><label for="checkbox_1_8"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="warnSite">
+            <div class="allSiteContainer">
+                <div class="allSiteTitle">
+                    <input type="checkbox" class="regular-checkbox" id="checkbox-2-all"><label for="checkbox-2-all" class="fl" style="margin-top: 8px"></label>
+                    <span class="fl">全选</span>
+                    <div class="fl">&nbsp;&nbsp;&nbsp;(<b></b>默认向您发送预警站点的即时水雨情预警短信)</div>
+                </div>
+                <div class="allSiteContent">
+                    <ul class="warnSite">
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-1"><label for="checkbox-2-1"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-2"><label for="checkbox-2-2"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-3"><label for="checkbox-2-3"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-4"><label for="checkbox-2-4"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-5"><label for="checkbox-2-5"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-6"><label for="checkbox-2-6"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-7"><label for="checkbox-2-7"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-8"><label for="checkbox-2-8"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-9"><label for="checkbox-2-9"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-10"><label for="checkbox-2-10"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-11"><label for="checkbox-2-11"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-12"><label for="checkbox-2-12"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-13"><label for="checkbox-2-13"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-14"><label for="checkbox-2-14"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-15"><label for="checkbox-2-15"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-16"><label for="checkbox-2-16"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-17"><label for="checkbox-2-17"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-18"><label for="checkbox-2-18"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-19"><label for="checkbox-2-19"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox-2-20"><label for="checkbox-2-20"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="concernedSiteContainer">
+                <div class="concernedSiteTitle">
+                    <span>预警站点</span>
+                    <span>(已关注<span>6</span>个站点)</span>
+                    <div class="fr" id="delBtn2"><div class="tip">点击删除预警站点</div></div>
+                </div>
+                <div class="concernedSiteContent">
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_1"><label for="checkbox_2_1"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_2"><label for="checkbox_2_2"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_3"><label for="checkbox_2_3"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_4"><label for="checkbox_2_4"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_5"><label for="checkbox_2_5"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_6"><label for="checkbox_2_6"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_7"><label for="checkbox_2_7"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="regular-checkbox" id="checkbox_2_8"><label for="checkbox_2_8"></label>
+                            <span>某某站点(P)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div id="cancelBtn2" class="ui-button-gray">取消</div>
+            <div id="confirmBtn" class="ui-button">确认添加</div>
+            <div id="prevBtn" class="ui-button">上一步</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

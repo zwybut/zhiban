@@ -1,0 +1,345 @@
+body{
+    overflow-x: hidden;
+}
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 20px;
+    background: url("../images/MES_send.png") no-repeat left center;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.conditionType{
+    height:70px;
+}
+.regionSelectDiv{
+    width:102px;
+    height:30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    margin-top: 0;
+    margin-right: 0;
+    border:1px solid #e6e6e6;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option li.hover{
+    background: #3bb9d4 ;
+}
+/****************自定义下拉选择框样式****************end*/
+.groupUl{
+    display: none;
+    margin-top:20px;
+}
+.groupUl li{
+    float: left;
+    width:98px;
+    height:28px;
+    margin-left: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #666;
+    border:1px solid #e6e6e6;
+    cursor: pointer;
+}
+.groupUl li:hover,.groupUl li.active{
+    color: #fff;
+    background: #3bb9d4;
+}
+.searchDiv{
+    width:202px;
+    height:28px;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+#searchIpt{
+    width:150px;
+    height:26px;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #919aa1;
+    line-height:26px;
+    border:1px solid #dee5e7;
+}
+#searchBtn{
+    float: right;
+    width:40px;
+    height:26px;
+    background: #3bb9d4 url("../images/sea_big.png") no-repeat center;
+    cursor: pointer;
+}
+#importUserBtn{
+    width:98px;
+    height:26px;
+    margin-top: 22px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb9d4;
+    cursor: pointer;
+}
+#batchRemoveBtn{
+    width:98px;
+    height:26px;
+    margin-top: 22px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+    border:1px solid #dee5e7;
+    cursor: pointer;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+.tableWrap table{
+    width:100%;
+    border-collapse: collapse;
+    border:none;
+}
+.tableWrap table thead tr{
+    background: #fafafa;
+}
+.tableWrap table th,.tableWrap table td{
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid #f2f2f2;
+}
+.mCSB_inside > .mCSB_container {
+    margin-right: 0px;
+}
+.fixHeaderTable_mainTableWrap {
+    width:100% !important;
+}
+.tableWrap table tbody tr td:nth-child(8){
+    position: relative;
+}
+.operDiv{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    width:15px;
+    height:15px;
+    margin:auto;
+    background: url("../images/view.png") left;
+    cursor: pointer;
+}
+.tableWrap table tbody tr:hover td{
+    color: #3bb9d4;
+}
+.tableWrap table tbody tr:hover .operDiv{
+    background: url("../images/view.png") right;
+}
+
+.peopleInfo{
+    position: absolute;
+    top:50px;
+    right:-500px;
+    bottom: 0;
+    width:499px;
+    background: #fff;
+    border-left:1px solid #e6e6e6;
+    z-index: 99;
+}
+.infoTitle{
+    height:40px;
+    margin-top: 20px;
+}
+#backBtn{
+    position: relative;
+    width:24px;
+    height:24px;
+    margin-top: 8px;
+    margin-left: 20px;
+    border:1px solid #e6e6e6;
+    text-align: center;
+    line-height: 24px;
+    background: url("../images/hidden.png") no-repeat center;
+    cursor: pointer;
+}
+.tip{
+    display: none;
+    position: absolute;
+    padding:0 5px;
+    line-height:20px ;
+    text-align: center;
+    font-size: 12px;
+    background: #3bb9d4;
+    color: white;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    white-space:nowrap;
+}
+#pName{
+    height:24px;
+    margin-top: 8px;
+    margin-left: 20px;
+    line-height: 24px;
+}
+#editBtn{
+    position: relative;
+    width:24px;
+    height:24px;
+    margin-top: 8px;
+    margin-right: 20px;
+    background: url("../images/cont_map_01.png") no-repeat center;
+    border:1px solid #e6e6e6;
+    cursor: pointer;
+}
+#delBtn{
+    position: relative;
+    width:24px;
+    height:24px;
+    margin-top: 8px;
+    margin-right: 20px;
+    background: url("../images/mess_rub_gray.png") no-repeat center;
+    border:1px solid #e6e6e6;
+    cursor: pointer;
+}
+.positionUl{
+    height:16px;
+    margin-left: 10px;
+}
+.positionUl li{
+    float: left;
+    width:90px;
+    height:16px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 12px;
+    color: #fff;
+}
+.positionUl li:nth-child(1){
+    background: #00aeff;
+}
+.positionUl li:nth-child(2){
+    background: #ff8324;
+}
+.positionUl li:nth-child(3){
+    background: #ff6b74;
+}
+.partLine{
+    width:calc(100% - 20px*2);
+    height:1px;
+    margin:20px auto 0;
+    background: #e6e6e6;
+}
+
+.infoListUl > li{
+    float: left;
+    width:calc(calc(100% - 20px*3) /2);
+    height:30px;
+    line-height: 30px;
+    margin-left: 20px;
+    font-size: 13px;
+    color: #666;
+}
+.infoListUl li:nth-child(21),.infoListUl li:nth-child(22),.infoListUl li:nth-child(23),.infoListUl li:nth-child(24){
+    width:calc(100% - 20px*3);
+}
+.infoListUl li input[type="text"]{
+    width:calc(100% - 10px);
+    height:28px;
+    padding-left: 10px;
+    border:1px solid #e6e6e6;
+}
+.infoListTitle{
+    margin-top: 13px;
+}
+#saveBtn{
+    position: absolute;
+    right:20px;
+    bottom: 25px;
+    width:calc(100% - 20px*2);
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb9d4;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+
+
+/****************灰色蒙版*************begin*/
+.modelbg{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+}
+/****************灰色蒙版***************end*/
+/*************添加新用户弹框**********begin*/
+#addNewUserPopup{
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 650px;
+    height: 460px;
+    z-index: 999;
+}
+#shutbtn{
+    position: absolute;
+    top:12px;
+    right:20px;
+    width:14px;
+    height:14px;
+    background: url("../images/close.png");
+    cursor: pointer;
+}
+/**************添加新用户弹框*************end*/

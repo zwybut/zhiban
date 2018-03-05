@@ -1,0 +1,180 @@
+﻿.inputbox{border: 1px solid #8DB2E3; width: 230px; height: 20px;}
+.inputbox_50{border: 1px solid #8DB2E3; width: 50px; height: 22px; margin-top: 0px;}
+.inputbox_60{border: 1px solid #8DB2E3; width: 60px; height: 22px; margin-top: 0px;}
+.inputbox_80{border: 1px solid #8DB2E3; width: 80px; height: 20px; margin-top: 0px;}
+.inputbox_100{border: 1px solid #8DB2E3; width: 100px; height: 20px;}
+.inputbox_120{border: 1px solid #8DB2E3; width: 120px; height: 20px;}
+.inputbox_150{border: 1px solid #8DB2E3; width: 150px; height: 20px;}
+.inputbox_200{border: 1px solid #8DB2E3; width: 200px; height: 20px;}
+.inputbox_400{border: 1px solid #8DB2E3; width: 400px; height: 20px; }
+.inputarea_200{border: 1px solid #8DB2E3; width: 200px;text-align: left; }
+.inputarea_400{border: 1px solid #8DB2E3; width: 400px;text-align: left; }
+.inputarea_600{border: 1px solid #8DB2E3; width: 600px;text-align: left; }
+
+.easyui-accordion ul{list-style-type:none;margin:0px; padding:10px;}
+.easyui-accordion ul li{ padding:0px;}
+.easyui-accordion ul li a{line-height:24px;}
+.easyui-accordion ul li div{margin:2px 0px;padding-left:10px;padding-top:2px;}
+.easyui-accordion ul li div.hover{border:1px dashed #99BBE8; background:#E0ECFF;cursor:pointer;}
+.easyui-accordion ul li div.hover a{color:#416AA3;}
+.easyui-accordion ul li div.selected{border:1px solid #99BBE8; background:#E0ECFF;cursor:default;}
+.easyui-accordion ul li div.selected a{color:#416AA3; font-weight:bold;}
+
+ 
+.icon{ background:url(./themes/icons/tabicons.png) no-repeat;width:18px;  line-height:18px; display:inline-block;}
+/*
+.icon-expand{ background:url('/images/coll2.gif') no-repeat;}
+.icon-collapse{ background:url('/images/coll3.gif') no-repeat;}
+*/
+.icon-sys{ background-position:0px -200px;}
+.icon-set{ background-position:-380px -200px;}
+.icon-set1{background-position:-20px -100px;}
+.icon-set2{background-position:-0px -220px;}
+.icon-add0{background-position: -20px 0px;}
+
+.icon-nav{background-position: -100px -20px; }
+.icon-users{background-position: -100px -480px;}
+.icon-teacher{background-position: -180px -480px;}
+.icon-depart{background-position: -200px -160px;}
+.icon-position{background-position: -140px -380px;}
+.icon-department{background-position: -160px -380px;}
+.icon-major{background-position: -180px -380px;}
+.icon-class{background-position: -200px -380px;}
+.icon-role{background-position: -260px -480px;}
+.icon-admin{background-position: -159px -480px;}
+.icon-log{background-position: -380px -80px;}
+
+.icon-delete{ background-position:-140px -120px;}
+.icon-delete2{ background-position:-340px -40px;}
+.icon-edit1{ background-position:-380px -320px;}
+.icon-magic{ background-position:0px -500px;}
+.icon-database{ background-position:-20px -140px;}
+.icon-lists{ background-position:-200px -400px;}
+.icon-link{ background-position:-260px -420px;}
+.icon-list{ background-position:-382px -80px;}
+.icon-tool{ background-position:2px -220px;}
+.icon-see{ background-position:-62px -258px;}
+.icon-goods{ background-position:-200px -80px;}
+.icon-money{ background-position:-340px -260px;}
+.icon-postage{ background-position:-60px -140px;}
+.icon-activity{ background-position:-360px -340px;}
+.icon-html{ background-position:-340px -260px;}
+.icon-recycle{ background-position:-340px -40px;}
+.icon-static{ background-position:-240px -80px;}
+.icon-files{ background-position:-0px -200px;}
+.icon-excel{ background-position:-260px -140px;}
+
+.icon-socket{ background-position:-40px -100px;}
+.icon-socket1{ background-position:-22px -140px;}
+.icon-socket3{ background-position:-302px -220px;}
+
+.icon-order{ background-position:-302px -80px;}
+.icon-order1{ background-position:-282px -80px;}
+.icon-order2{ background-position:-62px -140px;}
+
+.icon-edit1{ background-position:-182px -0px;}
+.icon-auth{ background-position:-20px -262px;}
+
+.icon-pro { background-position:-300px 0px;}
+.icon-key { background-position:-380px -220px;}
+.icon-gman { background-position:-80px -420px;}
+.icon-addf { background-position:-60px 0px;}
+.icon-chk { background-position:0px -260px;}
+.icon-cont { background-position:-180px -100px;} 
+.icon-import { background-position:-380px -140px;}
+.icon-export { background-position:0px -160px;}
+.icon-purchase { background-position:-40px -100px;}
+.icon-people { background-position:-360px -200px;}
+.icon-pmove { background-position:-200px -460px;}
+.icon-trane { background-position:-80px -140px;}
+.icon-gandr { background-position:-300px -240px;}
+.icon-daily { background-position:-120px -360px;}
+.icon-lab { background-position:-240px -20px;}
+.icon-basic { background-position:0px -140px;}
+.icon-org { background-position:-300px -80px;}
+.icon-roles { background-position:-140px -480px;}
+.icon-project { background-position:-380px -60px;}
+.icon-coop { background-position:-181px -260px;}
+.icon-surport { background-position:-280px -340px;}
+.icon-part { background-position:0px -40px;}
+.icon-pstate { background-position:-40px -280px;}
+.icon-nation { background-position:-80px -100px;}
+.icon-zw { background-position:-80px -360px;}
+.icon-each { background-position:-20px -220px;}
+.icon-partic { background-position:-201px -40px;}
+.icon-tranel { background-position:-140px -140px;}
+.icon-pros { background-position:-140px -240px;}
+.icon-prol { background-position:-280px -440px;}
+.icon-metl { background-position:-260px -440px;}
+.icon-supl { background-position:-321px -480px;}
+.icon-buyl { background-position:-380px -20px;}
+.icon-remoney { background-position:-340px 0px;}
+.icon-resl { background-position:-240px -40px;}
+
+.icon-reply{background-position:-100px -300px;}
+.icon-chart{background-position:-240px -80px;}
+.icon-chart1{background-position:-260px -80px;}
+.icon-chart2{background-position:-280px -80px;} 
+.icon-chart3{background-position:-300px -80px;}  
+ 
+.icon-site{background-position:-200px -220px;}
+.icon-news{background-position:-60px -280px;}
+.icon-news1{background-position:-80px -280px;}
+.icon-phone{background-position:-300px -420px;}
+.icon-msg{background-position:-260px -60px;}
+.icon-message{background-position:-80px -60px;}
+
+.icon-school{background-position:-120px -140px;}
+.icon-course{background-position:-220px -340px;}
+.icon-star{background-position:-260px -40px;}
+.icon-book{background-position:-60px -60px;}
+.icon-books{background-position:-260px -60px;}
+
+
+
+/*
+.icon{ background:url(/images/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
+.icon-sys{ background-position:0px -200px;}
+.icon-set{ background-position:-380px -200px;}
+.icon-set1{background-position:-20px -100px;}
+.icon-set2{background-position:-0px -220px;}
+.icon-add{background-position: -20px 0px;}
+.icon-add1{background:url('icon/edit_add.png') no-repeat;}
+.icon-nav{background-position: -100px -20px; }
+.icon-users{background-position: -100px -480px;}
+.icon-role{background-position: -360px -200px;}
+.icon-log{background-position: -380px -80px;}
+.icon-delete16{background:url('icon/delete.gif') no-repeat;width:18px; line-height:18px; display:inline-block;}
+.icon-delete{ background-position:-140px -120px;}
+.icon-delete2{ background-position:-340px -40px;}
+.icon-edit{ background-position:-380px -320px;}
+.icon-magic{ background-position:0px -500px;}
+.icon-database{ background-position:-20px -140px;}
+.icon-distribution{ background-position:-0px -220px;}
+.icon-pass{ background-position:-380px -220px;}
+.icon-browse{ background-position:-60px -260px;}
+.icon-news{background-position:-60px -280px;}
+.icon-news1{background-position:-80px -280px;}
+.icon-product{background-position:-280px -60px;}
+.icon-message{background-position:-80px -60px;}
+.icon-msg{background-position:-260px -60px;}
+.icon-link{background-position:-360px -240px;}
+.icon-recruit{background-position:-360px -40px;}
+.icon-image{background-position:-0px -340px;}
+.icon-download{background-position:-0px -180px;}
+.icon-cmp{background-position:-300px -420px;}
+.icon-site{background-position:-200px -220px;}
+.icon-reply{background-position:-100px -300px;}
+.icon-chart{background-position:-240px -80px;}
+.icon-chart1{background-position:-260px -80px;}
+.icon-chart2{background-position:-280px -80px;} 
+.icon-chart3{background-position:-300px -80px;} 
+.icon-files{background-position:-200px -280px;} 
+
+
+
+ 
+.icon-expand{ background:url('/images/coll2.gif') no-repeat;}
+.icon-collapse{ background:url('/images/coll3.gif') no-repeat;}
+
+*/

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_timedSend.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_timedSend.js"></script>
+</head>
+<body>
+<div class="left">
+    <div class="title">
+        <p></p>
+        <span>人员选择</span>
+    </div>
+    <div class="easyui-panel" style="padding:20px;overflow: auto">
+        <ul class="easyui-tree" id="userList" data-options="animate:true,lines:true,checkbox:true">
+        </ul>
+    </div>
+</div>
+<div class="right">
+    <div class="title">
+        <p></p>
+        <span>短信编辑</span>
+    </div>
+    <div class="timeSendBox">
+        <span>发送时间</span>
+        <div class="typeSelectDiv">
+            <select id="typeSelect">
+                <option value="" selected="selected">类型选择</option>
+                <option value="超汛">超汛</option>
+                <option value="洪峰">洪峰</option>
+                <option value="台风">台风</option>
+                <option value="其他">更多</option>
+            </select>
+        </div>
+        <div class="timeSelectDiv">
+            <input type="text" placeholder="" id="startTime" class=" fl easyui-datetimebox"
+                   data-options="required:true,showSeconds:false,editable:false" value="">
+        </div>
+    </div>
+    <div class="addressBox">
+        <span>收件人</span>
+        <div class="addressDiv" tabindex="0">
+            <textarea name="" id="userInfo" readonly="true"></textarea>
+            <div id="delBtn">
+                <div class="delIcon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="customBox">
+        <span>其他人</span>
+        <div class="customDiv">
+            <textarea name="" id="telInfo" ></textarea>
+            <div id="editBtn">
+                <div class="editIcon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mainContent">
+        <span>正文</span>
+        <div class="mainContentDiv">
+            <textarea name="" id="newInfo"></textarea>
+        </div>
+    </div>
+    <div id="sendBtn" class="ui-button">定时发送</div>
+    <div id="cancelBtn" class="ui-button-gray">取消</div>
+</div>
+</body>
+</html>

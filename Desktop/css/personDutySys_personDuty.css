@@ -1,0 +1,377 @@
+html,body{
+    background: #fafafa;
+}
+.header{
+    height:50px;
+    padding-left: 72px;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #fff;
+    background: #17212a url("../images/work_logo.png") no-repeat 2.5% center;
+}
+.main{
+    background: #fff;
+}
+.top{
+    width:calc(100% - 20px*2);
+    height:70px;
+    margin:0 auto;
+    border-bottom: 1px solid #e6e6e6;
+}
+.dutyMonth,#backBtn,#forwardBtn{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6f6f6f;
+}
+.dutyMonth{
+    display: inline-block;
+    line-height: 70px;
+    margin-left: 30px;
+}
+#backBtn,#forwardBtn{
+    width:28px;
+    height:28px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 30px;
+    background: #fafafa;
+    border:1px solid #e6e6e6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#forwardBtn{
+    margin-left: 14px;
+}
+#backBtn{
+    margin-left: 74px;
+}
+#showChartBtn,#showTabBtn,#printBtn{
+    float: right;
+    width:80px;
+    height:30px;
+    margin-top: 20px;
+    margin-right: 20px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 1px solid #3bb9d4;
+    background-color: #3bb9d4;
+}
+#showChartBtn{
+    background: #3bb9d4 url("../images/work_tj.png") no-repeat center;
+}
+#showTabBtn{
+    display: none;
+    background: #3bb9d4 url("../images/work_form.png") no-repeat center;
+}
+#printBtn{
+    background: #3bb9d4 url("../images/work_dy.png") no-repeat center;
+}
+.center{
+    position: relative;
+}
+.left{
+    position: absolute;
+    top:20px;
+    left:50px;
+    bottom:30px;
+    width:240px;
+    border: 1px solid #eaeaeb;
+}
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.left .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/MES_send.png") no-repeat left center;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.right{
+    position: absolute;
+    top:20px;
+    right:50px;
+    bottom:30px;
+    width:calc(100% - 50px*2 - 20px - 2px);
+    /*border: 1px solid #eaeaeb;*/
+}
+.title ul{
+    float: right;
+    width:calc(100% - 120px);
+}
+.title ul li{
+    float: left;
+    width:calc(100%/7);
+    height:48px;
+    font-size:13px;
+    font-weight:bold;
+    color: #4c4c4c;
+    text-align: center;
+}
+.content{
+    overflow: auto;
+}
+.column{
+    height:238px;
+    border-bottom: 1px solid #eaeaeb;
+}
+.columnLeft{
+    float: left;
+    width:40px;
+    height:100%;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    border-right: 1px solid #eaeaeb;
+}
+.morningShiftTitle{
+    height:134px;
+    text-align: center;
+    line-height: 134px;
+}
+.eveningShiftTitle{
+    height:103px;
+    text-align: center;
+    line-height: 103px;
+    border-top: 1px solid #eaeaeb;
+}
+.columnCenter{
+    float: left;
+    width:78px;
+    height:100%;
+}
+.nullDiv,.shiftDate{
+    height:30px;
+}
+.shiftLeader,.shiftPerson,.morningShiftLeader,.morningShiftPerson,.eveningShiftLeader,.eveningShiftPerson{
+    height:51px;
+    text-align: center;
+    line-height: 51px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #808080;
+    position: relative;
+}
+.shiftLeader,.morningShiftLeader,.eveningShiftLeader{
+    border-top: 1px solid #eaeaeb;
+}
+.shiftPerson,.morningShiftPerson,.eveningShiftPerson{
+    border-top: 1px dashed #eaeaeb;
+}
+.columnRight{
+    float: left;
+    width:calc(100% - 40px - 78px - 1px);
+    height:100%;
+}
+.columnRight > ul > li{
+    float: left;
+    width:calc((100% - 8px)/7);
+    height:238px;
+    border-left: 1px solid #eaeaeb;
+}
+.columnRight > ul > li:last-child{
+    border-right: 1px solid #eaeaeb;
+}
+.shiftDate{
+    line-height: 30px;
+    font-size: 12px;
+    color: #808080;
+    padding-left: 35%;
+}
+.shiftDate.active{
+    background: url("../images/work_wea.png") no-repeat 58% 45%;
+}
+.morningShift{
+    color: #3bb9d4;
+    cursor: pointer;
+}
+.morningShift.active{
+    color: #fff;
+    background: #3bb9d4;
+}
+.eveningShift{
+    color: #ff8327;
+    cursor: pointer;
+}
+.eveningShift.active{
+    color: #fff;
+    background: #ff8327;
+}
+.shiftDiv{
+    position: relative;
+}
+.shiftDiv.active{
+    background: #f7fbfd;
+    border:1px dashed #3bb9d4;
+}
+.shiftList{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    width:40px;
+    height: auto;
+    display: table;
+    margin:auto;
+    overflow: auto;
+}
+.shiftList li{
+    width:40px;
+    height:14px;
+    text-align: center;
+    line-height: 14px;
+}
+.dutyDetailInfo{
+    display: none;
+    position: absolute;
+    top:-2px;
+    right:-246px;
+    width:243px;
+    border:1px solid #ececed;
+    background: #fff;
+    box-shadow: 4px 4px 5px #f0f0f0;
+    z-index: 99;
+}
+.infoTitle{
+    height:40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #fff;
+    background: #3bb9d4;
+}
+.infoTime{
+    margin-left: 22px;
+    font-weight: bold;
+}
+.cancelBtn{
+    float: right;
+    font-size: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.infoContent li{
+    width:204px;
+    height:70px;
+    margin:0 auto;
+}
+.infoContent li:first-child{
+    border-bottom: 1px solid #f5f5f5;
+}
+.personInfoDiv{
+    float: left;
+}
+.personInfo{
+    width:102px;
+    height:35px;
+    line-height: 35px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #808080;
+}
+.personName,.personPhone{
+    color: #17212a;
+}
+
+.chartInfo{
+    display: none;
+}
+
+/******************日历插件样式***************begin*/
+.fc-event .fc-content {
+    /*height:35px;*/
+    /*line-height: 35px;*/
+    /*text-align: center;*/
+    padding-left: calc(calc(100% - 100px ) / 2);
+}
+.fc-event, .fc-event-dot {
+    background-color: #3bb9d4;
+}
+.fc-event {
+    border: 1px solid #3bb9d4;
+}
+.fc-unthemed td.fc-today {
+    color: #fff;
+    background: #3bb9d4;
+    /*opacity: 0.5;*/
+}
+.aui_content.aui_state_full{
+    height:450px;
+    width:302px;
+    background: #fff;
+}
+.aui_buttons button{
+    float: left;
+    width: 65px;
+    height: 22px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    color: #000;
+    background: #f2f2f2;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.aui_buttons .aui_state_highlight{
+    background: #3bb9d4;
+    color: #fff;
+}
+.aui_footer{
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+}
+.fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end.fc-draggable.fc-resizable{
+    border: 1px solid #f2f2f2;
+    background-color: transparent;
+    margin:4px 5px;
+    /*width: 100px;*/
+}
+.fc-title{
+    color: #666;
+}
+/******************日历插件样式****** *********end*/
+
+.fc button {
+    color: #fff ;
+    background: #3bb9d4 ;
+}
+.fc button:hover{
+    background: #34B4D4;
+}
+.fc-state-active, .fc-state-down {
+    box-shadow: none;
+}
+.fc-state-default {
+     text-shadow: none;
+     box-shadow: none;
+    border-color: #34B4D4;
+}

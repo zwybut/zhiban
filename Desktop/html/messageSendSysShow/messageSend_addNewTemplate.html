@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加模板弹窗</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_addNewTemplate.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type='text/javascript' src="../../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_addNewTemplate.js"></script>
+</head>
+<body>
+<div id="messageSend_addNewTemplate">
+    <div class="title">模板选择</div>
+    <div class="templateType">
+        <ul>
+            <li class="active">固定模板</li>
+            <!--<li>定制模板</li>-->
+        </ul>
+    </div>
+    <div class="templateContent">
+        <ul class="listTitle">
+            <li>消息名称</li>
+            <li>消息内容</li>
+        </ul>
+        <div class="wrap">
+            <ul id="modelMessage">
+                <!--<li class="active">-->
+                <!--<div>水文信息</div>-->
+                <!--<div>某某地区最近将迎来多少级大风并伴随雷雨，请各单位注意相关安全措施！！！！！！！！！！！！！！</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="templateContent">
+        <div class="typeSelectDiv">
+            <div class="ts0">
+                <select id="typeSelect">
+                    <option value="类型选择">类型选择</option>
+                    <option value="类型一">类型一</option>
+                    <option value="类型二">类型二</option>
+                    <option value="类型三">类型三</option>
+                </select>
+            </div>
+            <div class="ts1">发送时间</div>
+            <div class="ts2">
+                <input type="text" placeholder="" id="startTime" class=" fl easyui-datetimebox"
+                       data-options="required:true,showSeconds:false,editable:false" value="2016-10-26 09:00">
+            </div>
+            <div class="ts3">-</div>
+            <div class="ts4">
+                <input type="text" placeholder="" id="endTime" class=" fl easyui-datetimebox"
+                       data-options="required:true,showSeconds:false,editable:false" value="2016-10-26 09:00">
+            </div>
+        </div>
+        <textarea name="" id="sendContent" cols="30" rows="10">某某区域水位线超警戒某某米，需要做好某某准备，请各单位进行通知 </textarea>
+    </div>
+    <div class="foot">
+        <div id="cancelBtn" class="ui-button-gray">取消</div>
+        <div id="addUserBtn" class="ui-button" listid="">确认导入</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通讯录管理</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_mailListManage.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_mailListManage.js"></script>
+</head>
+<body>
+<div class="title">
+    <p></p>
+    <span>通讯录管理</span>
+</div>
+<div class="conditionType">
+    <div class="regionSelectDiv fl">
+        <select id="regionSelect">
+            <option value="0" selected="selected">地区选择</option>
+            <option value="1">嵊州市</option>
+            <option value="2">XX县1</option>
+            <option value="3">XX县2</option>
+        </select>
+    </div>
+    <ul class="groupUl fl">
+    </ul>
+    <div id="importUserBtn" class="ui-button fr">添加新人员</div>
+    <div id="batchRemoveBtn" class="ui-button-gray fr">删除</div>
+    <div class="searchDiv fr">
+        <input type="text" placeholder="模糊搜索" id="searchIpt">
+        <div class="ui-button" id="searchBtn"></div>
+    </div>
+</div>
+<div class="tableWrap">
+    <table>
+        <thead>
+        <tr>
+            <th><input type="checkbox" class="regular-checkbox" id="checkbox-0"><label for="checkbox-0"></label></th>
+            <th>所在地区</th>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>所在单位</th>
+            <th>职位</th>
+            <th>所在分组</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="userInfo">
+        <tr>
+            <td><input type="checkbox" class="regular-checkbox" id="checkbox-1"><label for="checkbox-1"></label></td>
+            <td>嵊州市</td>
+            <td>张三</td>
+            <td>13856781234</td>
+            <td>某单位-某部门</td>
+            <td>局长</td>
+            <td>嵊州市-水文站&nbsp;浦口镇-测量队&nbsp;甘霖镇-防汛办&nbsp;仙岩镇-代班组</td>
+            <td><div class="operDiv"></div></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="peopleInfo">
+    <div class="infoTitle">
+        <div class="fl" id="backBtn"><div class="tip">点击收回人员信息</div></div>
+        <div class="fl" id="pName"><b>张三</b>(<span>13856781234</span>)</div>
+        <div class="fr" id="delBtn"><div class="tip">点击删除人员信息</div></div>
+        <div class="fr" id="editBtn"><div class="tip">点击编辑人员信息</div></div>
+    </div>
+    <ul class="positionUl">
+        <li>嵊州市-水文站</li>
+        <li>浦口镇-测量队</li>
+        <li>甘霖镇-防汛办</li>
+    </ul>
+    <div class="partLine"></div>
+    <ul class="infoListUl">
+        <li class="infoListTitle">姓名</li>
+        <li class="infoListTitle">性别</li>
+        <li><input type="text" value="李四" id="personName" readonly></li>
+        <li>
+            <select id="sexSelect">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select></li>
+        <li class="infoListTitle">所在区域</li>
+        <li class="infoListTitle">所在街道/镇</li>
+        <li>
+            <select id="zoneSelect">
+                <option value="">嵊州市</option>
+                <option value="">XX县</option>
+                <option value="">XX镇</option>
+            </select>
+        </li>
+        <li>
+            <select id="streetSelect">
+                <option value="">街道一</option>
+                <option value="">街道二</option>
+                <option value="">街道三</option>
+            </select>
+        </li>
+        <li class="infoListTitle">移动电话</li>
+        <li class="infoListTitle">所在单位</li>
+        <li><input type="text" value="13856781234" id="mobile" readonly></li>
+        <li><input type="text" value="XX单位" id="unit" readonly></li>
+        <li class="infoListTitle">所在部门</li>
+        <li class="infoListTitle">职位</li>
+        <li><input type="text" value="XX部门" id="department" readonly></li>
+        <li><input type="text" value="XX职位" id="position" readonly></li>
+        <li class="infoListTitle">固定电话</li>
+        <li class="infoListTitle">单位地址</li>
+        <li><input type="text" value="0575-1234567" id="tel" readonly></li>
+        <li><input type="text" value="XX水文" id="address" readonly></li>
+        <li class="infoListTitle">关注站点</li>
+        <li><input type="text" value="站点一,站点二,站点三" id="concernSite" readonly></li>
+        <li class="infoListTitle">预警关注站点</li>
+        <li><input type="text" value="站点一,站点二,站点三" id="warnSite" readonly></li>
+    </ul>
+    <div class="ui-button" id="saveBtn">保存信息</div>
+</div>
+<!--黑色蒙版-->
+<div class="modelbg"></div>
+<!--添加新人员-->
+<div id="addNewUserPopup">
+    <iframe src="mailListManage_addNewUser.html" width="650px" height="500px" frameborder="0"></iframe>
+    <div id="shutbtn"></div>
+</div>
+<!--短信关注站点-->
+<!--<div id="SMSconcernPopup">-->
+    <!--<iframe src="mailListManage_SMSconcern.html" width="650px" height="600px" frameborder="0"></iframe>-->
+    <!--<div id="closebtn"></div>-->
+<!--</div>-->
+</body>
+</html>

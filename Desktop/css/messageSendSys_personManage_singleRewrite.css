@@ -1,0 +1,126 @@
+#personManage_addNewUser{
+    width:650px;
+    height:460px;
+    background: #fff;
+}
+.title{
+    height:39px;
+    line-height: 39px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4c4c4c;
+    border-bottom: 1px solid #e6e6e6;
+    background: #fafafa;
+}
+.content{
+    width:98%;
+    height:50px;
+    line-height: 50px;
+    margin:0 auto;
+    position: relative;
+}
+.content span{
+    margin-left: 10px;
+    font-size: 13px;
+    color: #4c4c4c;
+}
+.inputText{
+    width:220px;
+    height:28px;
+    padding-left: 10px;
+    margin-left: 12px;
+    border:1px solid #e6e6e6;
+}
+.content input[type="radio"]{
+    margin-left: 10px;
+}
+.content p{
+    position: absolute;
+    top:4px;
+    left:46%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fe6060;
+}
+.notice{
+    position: absolute;
+    top:4px;
+    right:3%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fe6060;
+}
+#regionSelect,#streetSelect,#jobSelect,#departmentSelect{
+    width:220px;
+    height:28px;
+    margin-left: 12px;
+    padding-left: 10px;
+    border:1px solid #e6e6e6;
+}
+/****************自定义下拉选择框样式****************beigin*/
+.select_box{
+    margin-top: 10px;
+    margin-left: 13px;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border:1px solid #e6e6e6;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option{
+    left:-1px;
+}
+/****************自定义下拉选择框样式****************end*/
+.selectIntroduce{
+    float: left;
+}
+.iptText{
+    width:535px;
+    height:28px;
+    margin-left: 12px;
+    padding-left: 10px;
+    border:1px solid #e6e6e6;
+}
+.iptText_{
+    margin-left: 38px;
+}
+.regular-radio + label{
+    margin-left:10px;
+}
+.foot{
+    height:70px;
+}
+#updateUserBtn{
+    float: right;
+    width:108px;
+    height:28px;
+    margin-top: 21px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb9d4;
+    border-color: #3bb9d4;
+    cursor: pointer;
+}
+#cancelBtn{
+    float: right;
+    width:108px;
+    height:28px;
+    margin-top: 21px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    cursor: pointer;
+}

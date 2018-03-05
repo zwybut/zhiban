@@ -1,0 +1,160 @@
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.title p{
+    float: left;
+    width:16px;
+    height:48px;
+    margin-left: 20px;
+    background: url("../images/mess_his.png") no-repeat left center;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.timeSet{
+    height:48px;
+    margin:14px auto 14px;
+    /*border:1px solid #e0e4ea;*/
+}
+.ts1,.ts2,.ts3,.ts4,.ts5{
+    float: left;
+}
+.ts1{
+    width:60px;
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    margin-left: 15px;
+}
+.ts2,.ts4{
+    width:160px;
+    height:30px;
+    margin-top: 9px;
+}
+.ts2 .textbox ,.ts4 .textbox{
+    width:160px !important;
+    height:28px !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    border-color: #d9d9d9 !important;
+}
+.ts2 .textbox:hover ,.ts4 .textbox:hover{
+    border-color: #3bb9d4 !important;
+}
+.ts2 .datebox .combo-arrow ,.ts4 .datebox .combo-arrow{
+    background:  url("../images/cont_map_02.png") no-repeat  center ;
+}
+.ts2 .datebox:hover .combo-arrow ,.ts4 .datebox:hover .combo-arrow{
+    background:  url("../images/cont_map_02_.png") no-repeat  center ;
+}
+.panel-body{
+    height:227px;
+    border:1px solid #d9d9d9;
+}
+.calendar-body .calendar-dtable tbody tr td{
+    height:20px;
+}
+.calendar-selected{
+    background-color: #3bb9d4 !important;
+}
+.calendar-saturday{
+    color: black !important;
+}
+.ts3{
+    width:14px;
+    height:48px;
+    text-align: center;
+    line-height: 48px;
+    color: #5e6265;
+}
+.ts5{
+    width:190px;
+    height:30px;
+    margin-top: 9px;
+    margin-left: 14px;
+}
+.ts5 input{
+    width:140px;
+    height:28px;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #919aa1;
+    line-height:28px;
+    border:1px solid #dee5e7;
+}
+#searchBtn{
+    float: right;
+    width:40px;
+    height:30px;
+    background: #3bb9d4 url("../images/sea_big.png") no-repeat center;
+    cursor: pointer;
+}
+.listTitle{
+    width:calc(100% - 15*2px);
+    height:40px;
+    margin:0 auto;
+    background: #fafafa;
+}
+.listTitle li{
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+}
+.listTitle li:nth-child(1),.listTitle li:nth-child(2),.listTitle li:nth-child(3),.listTitle li:nth-child(4),.listTitle li:nth-child(5),.listTitle li:nth-child(6){
+    width:12%;
+}
+.listTitle li:nth-child(7){
+    width:28%;
+}
+.wrap{
+    width:calc(100% - 15*2px);
+    margin:0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.listContent li{
+    height:39px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.listContent li div{
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    color: #666666;
+}
+.listContent li:hover div{
+    color: #3bb9d4;
+}
+.listContent li div:nth-child(1),.listContent li div:nth-child(2),.listContent li div:nth-child(3),.listContent li div:nth-child(4),.listContent li div:nth-child(5),.listContent li div:nth-child(6){
+    width:12%;
+}
+.listContent li div:nth-child(7){
+    width:28%;
+}
+.news{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.newsAll{
+
+}
+
+.mCSB_inside > .mCSB_container {
+ margin-right: 0px;
+}

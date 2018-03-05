@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_personGroup.css">
+
+    <script type="text/javascript" src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_base.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_personGroup.js"></script>
+</head>
+<body>
+<div class="left">
+    <div class="title">
+        <p></p>
+        <span>分组列表</span>
+    </div>
+    <div class="easyui-panel" style="padding:20px;overflow: auto">
+        <ul class="easyui-tree" id="userList">
+        </ul>
+        <div id="mm" class="easyui-menu" style="width:100px;">
+            <div onclick="append()" data-options="iconCls:'icon-add'" id="addBasin">添加分组</div>
+            <div onclick="remove()" data-options="iconCls:'icon-remove'" id="delBasin">删除分组</div>
+        </div>
+    </div>
+    <!--<div class="addGroup">-->
+    <!--<span>添加分组</span>-->
+    <!--<p id="addGroupBtn"></p>-->
+    <!--</div>-->
+</div>
+<div class="right">
+    <div class="title">
+        <p></p>
+        <span>组内人员选择</span>
+    </div>
+    <div class="operDiv">
+        <div class="regionSelectDiv">
+            <select id="regionSelect">
+                <option value="" selected="selected">地区选择</option>
+                <option value="嵊州市">嵊州市</option>
+            </select>
+        </div>
+        <!--<div class="enterPositionDiv">-->
+            <!--<input type="text" placeholder="请输入电话" id="enterPosition">-->
+        <!--</div>-->
+        <div class="searchDiv">
+            <input type="text" placeholder="模糊搜索" id="searchIpt">
+            <div id="searchBtn"></div>
+        </div>
+        <div id="importUserBtn" class="ui-button">导入用户</div>
+        <div id="batchRemoveBtn" class="ui-button-gray">批量移除</div>
+    </div>
+    <ul class="listTitle">
+        <li><input type="checkbox" class="regular-checkbox" id="checkAll"><label for="checkAll"></label></li>
+        <li>所在地区</li>
+        <li>名称</li>
+        <li>电话</li>
+        <li>职位</li>
+        <li>操作</li>
+    </ul>
+    <div class="wrap">
+        <ul class="listContent">
+            <!--<li>-->
+            <!--<div><input type="checkbox" class="regular-checkbox checkPart" id="checkbox-1"><label for="checkbox-1"></label></div>-->
+            <!--<div>三门县</div>-->
+            <!--<div class="userId">张三</div>-->
+            <!--<div>13856781234</div>-->
+            <!--<div>局长</div>-->
+            <!--<div>-->
+            <!--<p class="operBtn"></p>-->
+            <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+</body>
+</html>

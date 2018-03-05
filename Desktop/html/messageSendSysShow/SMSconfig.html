@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预警短信配置</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery.mCustomScrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../css/messageSendSys_SMSconfig.css">
+
+    <script type='text/javascript' src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type='text/javascript' src="../../../Plugins/spinloading/spin.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_SMSconfig.js"></script>
+</head>
+<body>
+<div class="left">
+    <div class="title">
+        <p></p>
+        <span>人员选择</span>
+    </div>
+    <div class="easyui-panel" style="padding:20px;overflow: auto">
+        <ul class="easyui-tree" id="userList" data-options="animate:true,lines:true,checkbox:true">
+            <li>
+                <span>嵊州市</span>
+                <ul>
+                    <li>
+                        <span>水文站</span>
+                        <ul>
+                            <li>
+                                <span>水文站</span>
+                                <ul>
+                                    <li>吴宏海</li>
+                                    <li>李明宏</li>
+                                    <li>刘德琛</li>
+                                    <li>吕荣伟</li>
+                                    <li>杨志军</li>
+                                </ul>
+                            </li>
+                            <li>代办员</li>
+                            <li>测量队</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>设备组</span>
+                        <ul>
+                            <li>
+                                <span>设备维护组</span>
+                                <ul>
+                                    <li>吴宏海</li>
+                                    <li>余小鱼</li>
+                                    <li>李明宏</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="right">
+    <div class="title">
+        <p></p>
+        <span>站点预警短信配置</span>
+        <div>&nbsp;&nbsp;&nbsp;(<b>关注站点:</b>默认每天8:00向您发送已关注站点的前10名雨情信息和超限水位短信&nbsp;&nbsp;<b>预警站点:</b>默认向您发送预警站点的即时水雨情预警短信)</div>
+    </div>
+    <div class="conditionType">
+        <div class="selectDiv fl">
+            <select id="zoneSelect">
+                <option value="">地区选择</option>
+                <option value="">地区一</option>
+                <option value="">地区二</option>
+                <option value="">地区三</option>
+            </select>
+        </div>
+        <div class="selectDiv fl">
+            <select id="regionSelect">
+                <option value="">选择区域</option>
+                <option value="">区域一</option>
+                <option value="">区域二</option>
+                <option value="">区域三</option>
+            </select>
+        </div>
+        <ul class="siteTypeTab fl">
+            <li>雨量站</li>
+            <li>水库站</li>
+            <li>河道站</li>
+            <li>闸坝站</li>
+        </ul>
+        <div class="searchSelectDiv fr">
+            <select id="searchSelect">
+                <option value="0" selected="selected">全部</option>
+                <option value="1">只显示关注站点</option>
+                <option value="2">只显示预警站点</option>
+            </select>
+        </div>
+        <div class="searchDiv fr">
+            <input type="text" placeholder="模糊搜索" id="searchIpt">
+            <div class="ui-button" id="searchBtn"></div>
+        </div>
+    </div>
+    <div class="tableWrap">
+        <table>
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>序</th>-->
+                <!--<th>站名</th>-->
+                <!--<th>站码</th>-->
+                <!--<th>站类</th>-->
+                <!--<th>区域</th>-->
+                <!--<th>流域</th>-->
+                <!--<th>关注站点</th>-->
+                <!--<th>预警站点</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td><input type="checkbox" class="regular-checkbox" id="checkbox-1-0"><label for="checkbox-1-0"></label></td>-->
+                <!--<td><input type="checkbox" class="regular-checkbox" id="checkbox-2-0"><label for="checkbox-2-0"></label></td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        </table>
+    </div>
+</div>
+</body>
+</html>

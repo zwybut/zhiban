@@ -1,0 +1,252 @@
+.left{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:240px;
+    border-right: 1px solid #eaeaeb;
+}
+.title{
+    height:48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    background: #fafafa ;
+    border-bottom: 1px solid #eaeaeb;
+}
+.left .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/MES_send.png") no-repeat left center;
+}
+.title span{
+    float: left;
+    margin-left: 5px;
+}
+.right .title p{
+    float: left;
+    width:18px;
+    height:48px;
+    margin-left: 25px;
+    background: url("../images/MES_send.png") no-repeat right center;
+}
+.right{
+    position: absolute;
+    top:0;
+    left:241px;
+    right:0;
+    bottom: 0;
+}
+.timeSendBox{
+    height:30px;
+    margin-top: 20px;
+}
+.addressBox{
+    height:62px;
+    margin-top: 20px;
+}
+.customBox{
+    height:30px;
+    margin-top: 18px;
+}
+.mainContent{
+    margin-top: 18px;
+}
+.timeSendBox span, .addressBox span,.customBox span,.mainContent span{
+    float: left;
+    padding-left: 25px;
+    line-height: 30px;
+    font-weight: bold;
+}
+.timeSendBox .typeSelectDiv,.timeSendBox .timeSelectDiv{
+    float: right;
+    width:calc((100% - 95px - 40px)/2);
+    margin-right: 20px;
+}
+.timeSendBox .typeSelectDiv{
+    border:1px solid #eaeaeb;
+}
+.typeSelectDiv:hover{
+    border-color: #3bb9d4;
+}
+/**************日期控件样式******************begin*/
+.timeSelectDiv .textbox{
+    width:calc(100% - 27px) !important;
+    height:28px !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    border-color: #d9d9d9 !important;
+}
+.timeSelectDiv .textbox:hover{
+    border-color: #3bb9d4 !important;
+}
+.timeSelectDiv .datebox .combo-arrow{
+    background:  url("../images/cont_map_02.png") no-repeat  center ;
+}
+.timeSelectDiv .datebox:hover .combo-arrow {
+    background:  url("../images/cont_map_02_.png") no-repeat  center ;
+}
+.panel-body{
+    /*height:227px;*/
+    border:1px solid #d9d9d9;
+}
+.calendar-body .calendar-dtable tbody tr td{
+    height:20px;
+}
+.calendar-selected{
+    background-color: #3bb9d4 !important;
+}
+.calendar-saturday{
+    color: black !important;
+}
+/**************日期控件样式******************end*/
+/***************下拉框样式****************begin*/
+.select_box{
+    margin-top: 0;
+    margin-right: 0;
+}
+.select_showbox{
+    background-color: #fff;
+    color: #525e66;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    background: url(../images/select.png) no-repeat 0 center;
+}
+.select_option{
+    left:-1px;
+}
+.select_option li.hover{
+    background: #3bb9d4;
+}
+/***************下拉框样式****************end*/
+.addressBox .addressDiv,.customBox .customDiv,.mainContent .mainContentDiv{
+    float: right;
+    width:calc(100% - 95px - 20px);
+    margin-right: 20px;
+    border:1px solid #eaeaeb;
+    position: relative;
+}
+.customDiv:hover{
+    border:1px solid #3bb9d4 !important;
+}
+.ui-button-gray{
+    border:none;
+}
+#userInfo{
+    width:calc(100% - 38px);
+    height:60px;
+    font-size: 13px;
+    color: #4c4c4c;
+}
+#telInfo{
+    width:calc(100% - 38px);
+    height:28px;
+    font-size: 13px;
+    color: #4c4c4c;
+}
+#newInfo{
+    width:calc(100% - 4px);
+    font-size: 13px;
+    color: #4c4c4c;
+}
+#delBtn{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    width:38px;
+    border-left:1px solid #eaeaeb;
+    cursor: pointer;
+}
+.delIcon{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    width:16px;
+    height:16px;
+    background: url("../images/mess_rub.png") no-repeat  0 top;
+}
+.addressDiv:hover .delIcon{
+    background: url("../images/mess_rub.png") no-repeat  0 bottom !important;
+}
+#editBtn{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    width:38px;
+    border-left:1px solid #eaeaeb;
+    cursor: pointer;
+}
+.editIcon{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    width:24px;
+    height:24px;
+    background: url("../images/mess_pen.png") no-repeat  0 bottom;
+}
+.customBox :hover .editIcon{
+    background: url("../images/mes_pen.png") no-repeat  center !important;
+}
+.customDiv:hover #editBtn{
+    border-left:1px solid #3bb9d4 !important;
+}
+#sendBtn{
+    float: right;
+    width:118px;
+    height:28px;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb9d4;
+    border:1px solid #eaeaeb;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#cancelBtn{
+    float: right;
+    width:118px;
+    height:28px;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #4c4c4c;
+    border:1px solid #eaeaeb;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+ul .tree-node-selected .tree-title {
+    background: #3bb9d4;
+    color: #fff;
+}
+.tree-node-hover{
+    color: #3bb9d4;
+}

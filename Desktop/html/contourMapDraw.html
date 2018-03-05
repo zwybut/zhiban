@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>等值面绘制</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" href="../../Plugins/leaflet/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" href="../../Plugins/mCustomScrollbar-3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="../../Plugins/easyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" href="../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" href="../css/contourMapDraw.css">
+
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../../Plugins/leaflet/leaflet-src.js"></script>
+    <script type="text/javascript" src="../../Plugins/leaflet/agTileLayer.js"></script>
+
+
+    <script type='text/javascript' src="../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../Plugins/jquery.mCustomScrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type='text/javascript' src="../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type="text/javascript" src="../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../Plugins/spinloading/spin.min.js"></script>
+    <script type="text/javascript" src="../../Plugins/CustomScripts/RthyinfoFormat.js"></script>
+    <script type="text/javascript" src="../js/mapShow.js"></script>
+    <script type="text/javascript" src="../js/contourMapDraw.js"></script>
+
+</head>
+<body style="margin:0;padding: 0;overflow: hidden">
+<div>
+    <div id="myMap">
+
+    </div>
+</div>
+
+<div class="drawBox">
+    <div class="hideBox">
+        <div class="hideIcon"></div>
+    </div>
+    <div class="detailInfoTitle">
+        <div class="dit1">等值面绘制</div>
+        <!--<div class="suo fr">-->
+            <!--<div class="suoTips"><p>点击锁定窗口</p><span></span></div>-->
+        <!--</div>-->
+    </div>
+    <div class="conditionQuery">雨量值设置</div>
+    <div class="timeselect">
+        <span class="tst1 fl">时间选择</span>
+        <select id="chooseTime">
+            <option value="0" selected="selected">当天</option>
+            <option value="1">前一天</option>
+            <option value="2">前两天</option>
+            <option value="3">前三天</option>
+            <option value="7">前一周</option>
+            <option value="-1">自定义</option>
+        </select>
+        <input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1"></label>
+        <span class="tst2">显示 / 隐藏等值面</span>
+    </div>
+    <div class="customTime">
+        <span>从 </span><input type="text" id="startTime" />
+        <span>至 </span><input type="text" id="endTime" />
+    </div>
+    <div class="drawType">
+        <span class="fl">绘制类型</span>
+        <select id="choosePic">
+            <option value="0" selected="selected">单张图</option>
+            <option value="1">序列图</option>
+            <option value="2">累计图</option>
+        </select>
+        <div class="sequeDiagram" id="interval" value="6">
+            <div class="sqd" value="1">1h</div>
+            <div class="sqd" value="4">4h</div>
+            <div class="sqd" value="6">6h</div>
+            <div class="sqd" value="12">12h</div>
+            <div class="sqd" value="24">24h</div>
+        </div>
+    </div>
+    <div class="firstStep">
+        <span class="fs1 fl">第一步</span>
+        <span class="fs2 fl ui-button" id="btn_statistic">统计雨量</span>
+        <!--<select id="chooseAlpha">-->
+            <!--<option value="透明度选择" selected="selected">透明度选择</option>-->
+            <!--<option value="0.0">0.00</option>-->
+            <!--<option value="0.1">0.10</option>-->
+            <!--<option value="0.2">0.20</option>-->
+            <!--<option value="0.3">0.30</option>-->
+            <!--<option value="0.4">0.40</option>-->
+            <!--<option value="0.5">0.50</option>-->
+            <!--<option value="0.6">0.60</option>-->
+            <!--<option value="0.7">0.70</option>-->
+            <!--<option value="0.8">0.80</option>-->
+            <!--<option value="0.9">0.90</option>-->
+            <!--<option value="1.0">1.00</option>-->
+        <!--</select>-->
+        <div id="selectAlpha"></div>
+    </div>
+    <div class="secendStep">
+        <div class="ss1">第二步</div>
+        <div class="ss2 ui-button" id="drawBtn">绘制</div>
+        <div class="ss3 ui-button" id="clearBtn">清空</div>
+        <span id="notice">请先执行第一步</span>
+    </div>
+    <div class="conditionQuery">雨量级设置(单位：毫米)</div>
+    <div class="rainLevel">
+        <span>雨量级别</span>
+        <input type="number" value="10" id="rainLev" placeholder="0">
+        <div class="rl1">+</div>
+        <div class="rl2">-</div>
+    </div>
+    <div class="rainRange">
+        <span class="rr1">雨量范围</span>
+        <span class="rr2">0~31.5</span>
+    </div>
+    <div class="checkContent">
+        <div class="rainRangeContent">
+            <input type="checkbox" id="checkbox-2-1" class="regular-checkbox" checked/><label for="checkbox-2-1" class="rrc1_"></label>
+            <input type="text" value="10" class="rrc2 rrc2_1">
+            <input type="checkbox" id="checkbox-2-2" class="regular-checkbox" checked/><label for="checkbox-2-2"></label>
+            <input type="text" value="20" class="rrc2 rrc2_2">
+            <input type="checkbox" id="checkbox-2-3" class="regular-checkbox" checked/><label for="checkbox-2-3"></label>
+            <input type="text" value="30" class="rrc2 rrc2_3">
+        </div>
+        <div class="rainRangeContent rainRangeContent_">
+            <input type="checkbox" id="checkbox-2-4" class="regular-checkbox" checked/><label for="checkbox-2-4" class="rrc1_"></label>
+            <input type="text" value="40" class="rrc2 rrc2_4">
+            <input type="checkbox" id="checkbox-2-5" class="regular-checkbox" checked/><label for="checkbox-2-5"></label>
+            <input type="text" value="50" class="rrc2 rrc2_5">
+            <input type="checkbox" id="checkbox-2-6" class="regular-checkbox" /><label for="checkbox-2-6"></label>
+            <input type="text" value="60" class="rrc2 rrc2_6">
+        </div>
+    </div>
+
+    <div class="dividingLine"></div>
+    <div id="myTab2">
+        <div class="nav_allWarn "><a href="#allWarn" class="navBtn active">绘制的雨量站点</a></div>
+        <div class="nav_hourWarn "><a href="#hourWarn" class="navBtn">各雨量级笼罩面积</a></div>
+    </div>
+    <div class="tab-content">
+        <div class="nav_content active">
+            <div class="dataSelect">
+                <span class="fl">时间选择</span>
+                <select id="selectTime" class="fl">
+                </select>
+            </div>
+            <div class="rainDrawTitle">
+                <div class="rdt1"><input type="checkbox" id="checkbox-top" class="regular-checkbox" /><label for="checkbox-top"></label></div>
+                <div class="rdt2">站名</div>
+                <div class="rdt2">地区</div>
+                <div class="rdt2">雨量</div>
+            </div>
+            <div class="rainDrawContent">
+                <!--<div class="rdc">-->
+                    <!--<div class="rdc1"><input type="checkbox" id="checkbox-3-2" class="regular-checkbox" /><label for="checkbox-3-2"></label></div>-->
+                    <!--<div class="rdc2">柚溪1</div>-->
+                    <!--<div class="rdc2">三门县</div>-->
+                    <!--<div class="rdc2">0.5</div>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+        <div class="nav_content">
+            <div class="rainShroudTitle">
+                <div class="rst1">序号</div>
+                <div class="rst2">降雨等级(mm)</div>
+                <div class="rst2">降雨面积(km²)</div>
+            </div>
+            <div class="rainShroudContent">
+                <!--<div class="rsc">-->
+                    <!--<div class="rsc1">1</div>-->
+                    <!--<div class="rsc2">0.0-10.0</div>-->
+                    <!--<div class="rsc2">12</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <div  class='tdTips'>
+        <p>点击定位站点</p>
+        <!--<span></span>-->
+    </div>
+    <div class="loadingDiv">
+        <div class="spinLoading"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+
+/*选择框样式*/
+.select_box{ font-size: 12px;color: #fff;line-height: 24px;float: left;margin-right: 8px;margin-top: 18px; position: relative;}
+.select_showbox{border: 1px solid transparent;border-radius: 3px;-webkit-border-radius:3px; -moz-border-radius: 3px; -o-border-radius: 3px;height: 24px;padding-left: 8px;background:#389bff url(images/triangleicon_03.png) no-repeat 0 center;}
+.select_option{border: 1px solid #dee5e7;border-top: none;display: none;position: absolute;left: 0;top: 26px;z-index: 999;overflow-y: auto}
+.select_option li{padding-left: 8px;color: #4c4c4c;background: #fff}
+.select_option li.selected{background-color: #F3F3F3;color: #4c4c4c;}
+.select_option li.hover{background: #389bff; color: #fff;}
+
+
+/*冻结表格样式*/
+.t th{
+    font-size:12px;
+    color: #000;
+    text-align:center;
+    background:#fafafa;
+    vertical-align:middle;
+    line-height:40px;
+}
+
+.t td{
+    font-size:12px;
+    color: #000;
+    text-align:center;
+    line-height:40px;
+}
+.table_fixhead{ position:absolute; left:0; height:40px; top:0;right:17px; overflow:hidden;z-index: 1}
+.table_fixLeft{ position:absolute; left:0; top:40px; bottom:17px; overflow-y:hidden;z-index: 8;background: #fff}
+.table_fixheadLeft{
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 10;
+}
+
+.t tbody tr.hover{
+    background:#dbedff ;
+}
+.t tbody tr.hover td{
+    border-color: #dbedff;
+}
+.t tbody tr.active{
+    background:#389bff ;
+    filter:drop-shadow(0 3px 3px #908f8f);
+    -webkig-filter:drop-shadow(0 3px 3px #908f8f);
+    -moz-filter:drop-shadow(0 3px 3px #908f8f);
+}
+
+.t tbody tr.active td{
+    border-color: #389bff;
+    color: #fff;
+}
+.table_fixLeft  tr.hover{
+    background:#dbedff ;
+}
+.table_fixLeft  tr.hover td{
+    border-color: #dbedff;
+}
+.table_fixLeft tr.active{
+    background:#389bff ;
+    filter:drop-shadow(0 3px 3px #908f8f);
+    -webkig-filter:drop-shadow(0 3px 3px #908f8f);
+    -moz-filter:drop-shadow(0 3px 3px #908f8f);
+}
+.table_fixLeft tr.active td{
+    border-color: #389bff;
+    color: #fff;
+}
+
+/***************************可固定列表格样式**************************begin*/
+.splitTable_header th{
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+}
+.splitTable_mainTableWrap{
+    overflow: hidden;
+    margin:0 auto;
+    border-bottom: 1px solid #dee5e7;
+}
+
+/***************************表头固定表格样式**************************begin*/
+
+
+/***************************表头固定表格样式**************************begin*/
+.fixHeaderTable_header th{
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+}
+th.fixHeaderTable_headerSortUp {
+    background: url("images/icon_asc_01.png") no-repeat 95% center;
+}
+th.fixHeaderTable_headerSortDown {
+    background: url("images/icon_asc_03.png") no-repeat 95% center;
+}
+.fixHeaderTable_mainTableWrap{
+    overflow: hidden;
+    margin:0 auto;
+    border-bottom: 1px solid #dee5e7;
+}
+
+/***************************表头固定表格样式**************************begin*/
+
+
+
+
+
+
+
+/**可编辑输入框样式***********************************************begin*/
+/*input输入框样式*/
+.editInput_input{
+    text-align: center;
+    line-height:22px;
+    font-size: 12px;
+    color: #292f33;
+    border:1px solid transparent;
+    background: transparent;
+}
+
+.editInput_input.active{
+    background-color: #ffffff;
+    border-color:#dce0e7;
+}
+/*进行编辑按钮样式*/
+.editInput_edit{
+    vertical-align: middle;
+    margin-left: 10px;
+    display: inline-block;
+    width:13px;
+    height:13px;
+    background: url("images/confirm.png") no-repeat left 0;
+}
+/*确认信息输入按钮样式*/
+.editInput_submit{
+    vertical-align: middle;
+    margin-left: 10px;
+    display:none;
+    width:13px;
+    height:13px;
+    background: url("images/confirm.png") no-repeat right 0;
+}
+
+/**可编辑输入框样式***********************************************end*/
+
+/**确认框样式***********************************************begin*/
+.confirmWin_mask{
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: black;
+    opacity: 0.4;
+    -moz-opacity:0.4;
+    -khtml-opacity:0.4;
+    filter: alpha(opacity=40);
+    z-index: 999;
+}
+.confirmWin_winFrame {
+    display: none;
+    position: absolute;
+    width: 410px;
+    height: 127px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+.confirmWin_closeIcon{
+    float: right;
+    width:10px;
+    height:10px;
+    margin-top: 20px;
+    margin-right:20px;
+    background: url("images/closeIcon.png")no-repeat center;
+    cursor: pointer;
+}
+.confirmWin_titleDiv:after{
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    *zoom:1;
+}
+.confirmWin_title{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight:bold;
+    letter-spacing: 1px;
+    color: #2c2c31;
+    line-height:40px;
+    float: left;
+}
+.confirmWin_content{
+    padding:0 20px;
+}
+.confirmWin_content input{
+    width: 398px;
+    height: 28px;
+    border: 1px solid #eee;
+    padding: 0 30px 0 10px;
+    margin-bottom: 10px;
+    background: url(images/pen_1_02.png)no-repeat 410px center;
+}
+.confirmWin_content input:hover,.confirmWin_content input:focus{
+    border-color: #20cfd5;
+    background-image: url(images/pen_1_01.png);
+    -webkit-background-image: url(images/pen_1_01.png);
+    -moz-background-image: url(images/pen_1_01.png);
+}
+.confirmWin_btnDiv{
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+
+}
+.confirmWin_enterBtn{
+    width: 60px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Support: IE <= 11 */
+    overflow: visible;
+    background: dodgerblue;
+    color: #fff;
+    border:1px solid transparent;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    font-size: 12px;
+}
+
+
+.confirmWin_cancleBtn{
+    width: 60px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Support: IE <= 11 */
+    overflow: visible;
+    background-color: #fff;
+    font-weight: normal;
+    border:1px solid #dde1e8;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    font-size: 12px;
+}
+.confirmWin_enterBtn:hover{
+    background:#00a2d4;
+}
+.confirmWin_cancleBtn:hover{
+    background: #dde1e8;
+}
+.confirmWin_enterBtn:active{
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.confirmWin_cancleBtn:active{
+
+}
+/**确认框样式***********************************************begin*/

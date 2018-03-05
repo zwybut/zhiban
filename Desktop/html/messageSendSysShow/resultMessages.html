@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预警短信管理</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/customPlugins/widgets_default.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery-ui/themes/gt_warn/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/jquery/toast/jquery.toast.css">
+    <link rel="stylesheet" type="text/css" href="../../../Plugins/easyui/themes/gt_analyze/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../css/backStageManageShow.css">
+
+    <script type='text/javascript' src="../../../Plugins/jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery-ui/jquery-ui.js"></script>
+    <script type='text/javascript' src="../../../Plugins/jquery/toast/jquery.toast.js"></script>
+    <script type='text/javascript' src="../../../Plugins/spinloading/spin.min.js"></script>
+    <script type="text/javascript" src="../../../Plugins/customPlugins/widgets.js"></script>
+    <script type='text/javascript' src="../../../Plugins/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/base.js"></script>
+    <script type="text/javascript" src="../../js/messageSendSys_resultMessages.js"></script>
+</head>
+<body>
+<div class="title">
+    <span>预警短信配置</span>
+</div>
+<div class="main">
+    <div class="userList">
+        <div class="userListTitle resultType">
+            <div class="ult1">人员选择</div>
+        </div>
+        <div class="easyui-panel" style="padding:20px;overflow: auto;width:100%">
+            <ul class="easyui-tree" id="BasinList" data-options="animate:true,lines:true">
+            </ul>
+        </div>
+    </div>
+    <div class="relatedSites">
+        <div class="relatedSitesTitle">
+            <div class="ult1">关注站点</div>
+            <div class="rfs rfs_ ui-button" value="PP" id="attentionDel">全部删除</div>
+        </div>
+        <div class="relatedSitesContent">
+            <div class="rainfallStName">
+                <ul class="sttpP" id="attentionList">
+                    <!--<li>-->
+                        <!--<div class="rfsn1">建设闸</div>-->
+                        <!--<div class="phoneBtn fl">-->
+                            <!--<div class="noticeTip">点击关注站点</div>-->
+                        <!--</div>-->
+                        <!--<div class="rfsn2"></div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div class="loadingDiv">
+                <div class="spinLoading"></div>
+            </div>
+        </div>
+    </div>
+    <div class="siteSelect">
+        <div class="userListTitle">
+            <div class="ult1">站点选择</div>
+        </div>
+        <div class="siteSelectMenu">
+            <ul class="queryUl queryTitle active">
+                <li class="fl active" value="PP">流域查询</li>
+                <li class="fl" value="ZZ">区域查询</li>
+            </ul>
+        </div>
+        <div class="easyui-panel siteTree active" style="padding:20px">
+            <ul id="StationList" class="easyui-tree" data-options="animate:true,checkbox:true,lines:true">
+            </ul>
+        </div>
+        <div class="easyui-panel siteTree" style="padding:20px">
+            <ul id="regionList" class="easyui-tree" data-options="animate:true,checkbox:true,lines:true">
+            </ul>
+        </div>
+        <div class="importRainST">
+            <div class="irst ui-button" id="attentionBtn">导入站点</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
